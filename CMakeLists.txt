@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Calculator)
 
 set(CMAKE_CXX_STANDARD 17)
-
+    
 #Google tests
 add_subdirectory(tests/googletest-master)
 include_directories(tests/googletest-master/googletest/include)
