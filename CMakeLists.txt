@@ -12,8 +12,12 @@
 cmake_minimum_required(VERSION 2.8)
 project(Calculator)
 
+# The version number.
+set (Calculator_VERSION_MAJOR 0)
+set (Calculator_VERSION_MINOR 1)
+
 set(CMAKE_CXX_STANDARD 17)
-    
+
 #Google tests
 add_subdirectory(tests/googletest-master)
 include_directories(tests/googletest-master/googletest/include)
