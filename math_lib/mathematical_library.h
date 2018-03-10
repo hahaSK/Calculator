@@ -10,4 +10,11 @@
 //===========================================================
 
 
-int scitanie(int param1, int param2);
+double Add(double param1, double param2);
+double Subtract(double param1, double param2);
+double Multiply(double param1, double param2);
+double Divide(double param1, double param2);
+double Power(double param1, int param2);
+double SquareRoot(double param);
+int Factorial(int param);
+double Modulo(double param1, double param2);
