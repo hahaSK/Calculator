@@ -1,8 +1,8 @@
-# Install script for directory: /home/juraj/FIT/IVS/projekt2/Calculator/tests/googletest-master
+# Install script for directory: D:/IVS/Branch/Calculator/tests/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Calculator")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -39,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/juraj/FIT/IVS/projekt2/Calculator/cmake-build-debug/tests/googletest-master/googlemock/cmake_install.cmake")
+  include("D:/IVS/Branch/Calculator/cmake-build-debug/tests/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 

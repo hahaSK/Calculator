@@ -1,1 +1,1 @@
--isystem D:/IVS/Calculator2/tests/googletest-master/googlemock/include -ID:/IVS/Calculator2/tests/googletest-master/googlemock -isystem D:/IVS/Calculator2/tests/googletest-master/googletest/include -ID:/IVS/Calculator2/tests/googletest-master/googletest 
+-isystem D:/IVS/Branch/Calculator/tests/googletest-master/googlemock/include -ID:/IVS/Branch/Calculator/tests/googletest-master/googlemock -isystem D:/IVS/Branch/Calculator/tests/googletest-master/googletest/include -ID:/IVS/Branch/Calculator/tests/googletest-master/googletest 

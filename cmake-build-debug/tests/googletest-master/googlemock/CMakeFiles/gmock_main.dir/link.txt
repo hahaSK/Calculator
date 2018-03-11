@@ -1,2 +1,2 @@
-/usr/bin/ar qc libgmock_maind.a  CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-/usr/bin/ranlib libgmock_maind.a
+C:\MinGW\bin\ar.exe qc libgmock_maind.a  CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj
+C:\MinGW\bin\ranlib.exe libgmock_maind.a

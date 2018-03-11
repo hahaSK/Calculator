@@ -11,7 +11,25 @@
 
 #include "mathematical_library.h"
 
-int scitanie(int param1, int param2)
+double Subtract(double param1, double param2)
 {
-    return param1 + param2;
+  return param1 - param2;
+}
+
+double Power(double param1, int param2)
+{
+  double result = 1;
+  if (param2 < 0)
+    throw "Power cannot be negative.";
+  else if (param1 == 0 && param2 <= 0)
+    throw "0 power of 0 is not defined.";
+
+  if (param2 == 0)
+    return result = 1;
+
+  for (int i = 1; i <= param2; i++)
+  {
+    result *= param1;
+  }
+  return result;
 }
