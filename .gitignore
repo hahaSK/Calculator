@@ -2,6 +2,7 @@
 build/
 xcuserdata
 cmake-build-debug/
+tests/googletest-master/
 .idea/
 bazel-bin
 bazel-genfiles
