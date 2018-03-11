@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/runTests.dir/tests/mathematical_library_tests.cpp.o"
-  "CMakeFiles/runTests.dir/math_lib/mathematical_library.cpp.o"
+  "CMakeFiles/runTests.dir/tests/mathematical_library_tests.cpp.obj"
+  "CMakeFiles/runTests.dir/math_lib/mathematical_library.cpp.obj"
   "runTests.pdb"
-  "runTests"
+  "runTests.exe"
+  "runTests.exe.manifest"
+  "librunTests.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

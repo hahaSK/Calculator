@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/juraj/FIT/IVS/projekt2/Calculator/main.cpp" "/home/juraj/FIT/IVS/projekt2/Calculator/cmake-build-debug/CMakeFiles/Calculator.dir/main.cpp.o"
-  "/home/juraj/FIT/IVS/projekt2/Calculator/math_lib/mathematical_library.cpp" "/home/juraj/FIT/IVS/projekt2/Calculator/cmake-build-debug/CMakeFiles/Calculator.dir/math_lib/mathematical_library.cpp.o"
+  "D:/IVS/Branch/Calculator/main.cpp" "D:/IVS/Branch/Calculator/cmake-build-debug/CMakeFiles/Calculator.dir/main.cpp.obj"
+  "D:/IVS/Branch/Calculator/math_lib/mathematical_library.cpp" "D:/IVS/Branch/Calculator/cmake-build-debug/CMakeFiles/Calculator.dir/math_lib/mathematical_library.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,11 +1,33 @@
+//=====================ShatteredButWhole=====================
+//              IVS project 2 - Calculator
 //
-// Created by pppol on 9.3.2018.
+//  Authors: Juraj Lahvička <xlahvi00@vutbr.cz>
+//           Lubomír Švehla <xsvehl09@stud.fit.vutbr.cz>
+//           Tomáš Sasák    <xsasak01@stud.fit.vutbr.cz>
+//           Martin Krajčí  <xkrajc21@stud.fit.vutbr.cz>
 //
+//  mathematical_library_tests.cpp created: 2018-Mar-09
+//===========================================================
 
 #include "googletest-master/googletest/include/gtest/gtest.h"
 
 #include "googletest-master/googlemock/include/gmock/gmock.h"
 #include "../math_lib/mathematical_library.h"
+
+TEST(testing, Add)
+{
+ EXPECT_EQ(Add(5,5),10);
+ EXPECT_EQ(Add(10,-5),5);
+ EXPECT_EQ(Add(-15,-10),-25);
+ EXPECT_EQ(Add(3.3, 1.2),4.5);
+}
+
+TEST(testing, Factorial)
+{
+  EXPECT_EQ(Factorial(0),1);
+  EXPECT_EQ(Factorial(5),120);
+  EXPECT_EQ(Factorial(-5),-120);
+}
 
 TEST(testing, Dividing)
 {

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libgtestd.a  CMakeFiles/gtest.dir/src/gtest-all.cc.o
-/usr/bin/ranlib libgtestd.a
+C:\MinGW\bin\ar.exe qc libgtestd.a  CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+C:\MinGW\bin\ranlib.exe libgtestd.a

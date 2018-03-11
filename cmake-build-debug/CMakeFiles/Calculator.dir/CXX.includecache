@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/juraj/FIT/IVS/projekt2/Calculator/main.cpp
+D:/IVS/Branch/Calculator/main.cpp
 iostream
 -
 math_lib/mathematical_library.h
-/home/juraj/FIT/IVS/projekt2/Calculator/math_lib/mathematical_library.h
+D:/IVS/Branch/Calculator/math_lib/mathematical_library.h
 
-/home/juraj/FIT/IVS/projekt2/Calculator/math_lib/mathematical_library.cpp
+D:/IVS/Branch/Calculator/math_lib/mathematical_library.cpp
 mathematical_library.h
-/home/juraj/FIT/IVS/projekt2/Calculator/math_lib/mathematical_library.h
+D:/IVS/Branch/Calculator/math_lib/mathematical_library.h
 
-/home/juraj/FIT/IVS/projekt2/Calculator/math_lib/mathematical_library.h
+D:/IVS/Branch/Calculator/math_lib/mathematical_library.h
 

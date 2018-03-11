@@ -12,11 +12,24 @@
 #include <iostream>
 #include "math_lib/mathematical_library.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    std::cout << scitanie(5,5)<< std::endl;
-	int i;
-	std::cin >> i;
+int main()
+{
+  std::cout << "Hello, World!" << std::endl;
+  std::cout << Subtract(5, 5) << std::endl;
+  try
+  {
 
-    return 0;
+    std::cout << Power(5, 5) << std::endl;
+  }
+  catch (char const *ex)
+  {
+    std::cout << ex;
+    return EXIT_FAILURE;
+  }
+
+
+  int i;
+  std::cin >> i;
+
+  return 0;
 }
