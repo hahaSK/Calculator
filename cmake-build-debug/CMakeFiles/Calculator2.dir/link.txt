@@ -1,1 +1,0 @@
-/usr/lib64/ccache/c++  -g  -rdynamic CMakeFiles/Calculator2.dir/main.cpp.o CMakeFiles/Calculator2.dir/math_lib/mathematical_library.cpp.o  -o Calculator2 
