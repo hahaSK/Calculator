@@ -1,0 +1,36 @@
+#Termíny:
+11.3.2018 - dokonèenie testov matematickej knižnice
+18.3.2018 - dokonèenie matematickej knižnice
+25.3.2018 - dokonèenie profilingu
+8.4.2018  - dokonèenie GUI
+15.4.2018 - dokonèenie dokumentácie, tvorba mock-up
+22.4.2018 - overenie funkènosti, dokonèenie inštalácie a overenie funkènosti na virtuálnom prostredí
+
+#Pridelenie úloh jednotlivým èlenom:
+xlahvi00 - Vytvorenie repozitára, nalikovanie google testov, vytvorenie testov pre matematické operácie šèítania a pre faktoriál.
+	   Vytovorenie matematických operácii odèítanie a mocniny. Profiling. 
+	   Tvorba GUI
+	   Tvorba inštalátoru pre Linux
+
+xsvehl09 - Vytvorenie testov pre matematické operácie modulo, delenie a pre druhú odmocninu.
+	   Vytovorenie matematických operácii modulo a násobenie. Profiling.
+	   Výpomoc pri tvorbe GUI 
+     	   Tvorba inštalátoru pre Linux
+
+xsasak01 - Vytvorenie testov pre matematické operácie odèítania a pre mocniny.
+	   Vytovorenie matematických operácii delenie a druhá odmocnina. 
+	   Tvorba GUI
+	   Tvorba inštalátoru pre Windows (volite¾né)
+
+xkrajc21 - Vytvorenie testov pre matematické operácie pre násobenie.
+	   Vytovorenie matematických operácii faktoriál a sèítanie.
+	   Výpomoc pri tvorbe GUI
+	   Tvorba inštalátoru pre Windows (volite¾né)
+
+#Komunikaèné kanály:
+Slack pre komunikáciu
+Trello pre workflow
+
+#Správa verzii:
+Github.com
+https://github.com/hahaSK/Calculator

@@ -1,4 +1,0 @@
-D:\Programovanie\JetBrains\apps\CLion\ch-0\181.4096.19\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\IVS\Branch\Calculator
--- Configuring done
--- Generating done
--- Build files have been written to: D:/IVS/Branch/Calculator/cmake-build-debug

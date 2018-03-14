@@ -1,3 +1,0 @@
-D:\Programovanie\JetBrains\apps\CLion\ch-0\181.4096.19\bin\cmake\bin\cmake.exe -E remove -f CMakeFiles\runTests.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\runTests.dir/objects.a @CMakeFiles\runTests.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -std=c++17 -g   -Wl,--whole-archive CMakeFiles\runTests.dir/objects.a -Wl,--no-whole-archive  -o runTests.exe -Wl,--out-implib,librunTests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\runTests.dir\linklibs.rsp
