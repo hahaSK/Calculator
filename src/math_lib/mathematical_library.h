@@ -47,4 +47,4 @@ int Factorial(int operand);
  * @param rightOperand - divisor
  * @return result
  */
-double Modulo(int leftOperand, int rightOperand);
+int Modulo(int leftOperand, int rightOperand);

@@ -16,6 +16,11 @@ double Subtract(double leftOperand, double rightOperand)
   return leftOperand - rightOperand;
 }
 
+double Multiply(double leftOperand, double rightOperand)
+{
+  return leftOperand * rightOperand;
+}
+
 double Power(double leftOperand, int rightOperand)
 {
   double result = 1;
@@ -32,4 +37,16 @@ double Power(double leftOperand, int rightOperand)
     result *= leftOperand;
   }
   return result;
+}
+
+int Modulo(int leftOperand, int rightOperand)
+{
+  int result;
+  if (rightOperand == 0)
+  {
+    throw "Division by zero is not defined.";
+  }
+
+  result = int(Divide(leftOperand, rightOperand));
+  return int(Subtract(leftOperand,Multiply(rightOperand,result)));
 }
