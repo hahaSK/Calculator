@@ -11,6 +11,11 @@
 
 #include "mathematical_library.h"
 
+double Add(double leftOperand, double rightOperand)
+{
+	return leftOperand + rightOperand;
+}
+
 double Subtract(double leftOperand, double rightOperand)
 {
   return leftOperand - rightOperand;
@@ -39,14 +44,36 @@ double Power(double leftOperand, int rightOperand)
   return result;
 }
 
-int Modulo(int leftOperand, int rightOperand)
+int Factorial(int operand)
 {
-  int result;
-  if (rightOperand == 0)
-  {
-    throw "Division by zero is not defined.";
-  }
+	int result = operand;
 
-  result = int(Divide(leftOperand, rightOperand));
-  return int(Subtract(leftOperand,Multiply(rightOperand,result)));
+	if (operand == 1 && operand == 0)
+	{
+		return 1;
+	}
+
+	if (operand < 0)
+	{
+		throw "Number for factorial cannot be negative";
+	}
+
+	for (int i = operand - 1; i > 0; i--)
+	{
+		result *= i;
+	}
+
+	return result;
 }
+
+//int Modulo(int leftOperand, int rightOperand)
+//{
+//  int result;
+//  if (rightOperand == 0)
+//  {
+//    throw "Division by zero is not defined.";
+//  }
+//
+//  result = int(Divide(leftOperand, rightOperand));
+//  return int(Subtract(leftOperand,Multiply(rightOperand,result)));
+//}
