@@ -77,3 +77,47 @@ int Factorial(int operand)
 //  result = int(Divide(leftOperand, rightOperand));
 //  return int(Subtract(leftOperand,Multiply(rightOperand,result)));
 //}
+
+double divide(double op1, double op2)
+{
+	if (op2 == 0)
+	{
+		throw "Cannot divide with 0.";
+	}
+
+	else
+		return (op1 / op2);
+}
+
+double square_root(double op1)
+{
+	if (op1 < 0)
+	{
+		throw "Cannot make square root from number lower than 0."
+	}
+
+	double low = 0;
+	double mid = 0;
+	double high = op1;
+
+	for (unsigned i = 0; i < 1000; i++)
+	{
+		mid = (low + high) / 2;
+
+		if (mid * mid == op1);
+		{
+			return mid;
+		}
+
+		else if (mid * mid > n)
+		{
+			high = mid;
+		}
+
+		else
+		{
+			low = mid;
+		}
+	}
+	return mid;
+}
