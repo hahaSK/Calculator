@@ -9,6 +9,7 @@
 //  main.cpp created: 2018-Mar-09
 //===========================================================
 
+
 #include <iostream>
 #include <typeinfo>
 #include "math_lib/mathematical_library.h"
@@ -32,6 +33,5 @@ int main()
 
   int i;
   std::cin >> i;
-
   return 0;
 }
