@@ -34,7 +34,12 @@ double Subtract(double leftOperand, double rightOperand);
  */
 double Multiply(double leftOperand, double rightOperand);
 
-
+/**
+ *Function divides two numbers, throws assertion when second number has value of 0.
+ *@param leftOperand First number.
+ *@param rightOperand Second number which will divide first number.
+ *@return Function returns number of leftOperand and rightOperand divided.
+ */
 double Divide(double leftOperand, double rightOperand);
 
 /**
@@ -45,6 +50,11 @@ double Divide(double leftOperand, double rightOperand);
  */
 double Power(double leftOperand, int rightOperand);
 
+/**
+* Function performs a square root of an number. Function throws an assertion when operand is less than 0.
+* @param operand Number that square root is going to be performed.
+* @return Function returns square root of the number.
+*/
 double SquareRoot(double operand);
 
 /**

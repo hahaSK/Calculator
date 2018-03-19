@@ -78,33 +78,33 @@ int Factorial(int operand)
 //  return int(Subtract(leftOperand,Multiply(rightOperand,result)));
 //}
 
-double divide(double op1, double op2)
+double Divide(double leftOperand, double rightOperand)
 {
-	if (op2 == 0)
+	if (rightOperand == 0)
 	{
 		throw "Cannot divide with 0.";
 	}
 
 	else
-		return (op1 / op2);
+		return (leftOperand / rightOperand);
 }
 
-double square_root(double op1)
+double SquareRoot(double leftOperand)
 {
-	if (op1 < 0)
+	if (leftOperand < 0)
 	{
 		throw "Cannot make square root from number lower than 0."
 	}
 
 	double low = 0;
 	double mid = 0;
-	double high = op1;
+	double high = leftOperand;
 
 	for (unsigned i = 0; i < 1000; i++)
 	{
 		mid = (low + high) / 2;
 
-		if (mid * mid == op1);
+		if (mid * mid == leftOperand);
 		{
 			return mid;
 		}
