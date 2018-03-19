@@ -64,6 +64,30 @@ TEST(testing, Multiply)
   EXPECT_EQ(Multiply(1,10),10);
 }
 
+TEST(Substraction, Basics)
+{
+	ASSERT_EQ(sub(2, 2) == 0);
+	ASSERT_ANY_THROW(sub(e, 25));
+	ASSERT_ANY_THROW(sub(25, e));
+	ASSERT_ANY_THROW(sub(e, f));
+	ASSERT_EQ(sub(2, 7) == -5);
+	ASSERT_EQ(sub(25, 100) == -75);
+	ASSERT_EQ(sub(100, 25) == 75);
+}
+
+TEST(Power, Basics)
+{
+	ASSERT_EQ(pow(2, 2) == 4);
+	ASSERT_EQ(pow(2, 10) == 1024);
+	ASSERT_EQ(pow(-5, 2) == 25);
+	ASSERT_EQ(pow(-7, 8) == 5764801);
+	ASSERT_ANY_THROW(pow(2, -5));
+	ASSERT_ANY_THROW(pow(4, 3.2));
+	ASSERT_ANY_THROW(2, -4.5);
+	ASSERT_EQ(pow(7, 0) == 1);
+	ASSERT_EQ(pow(22, 3) == 10648);
+	ASSERT_EQ(pow(-15, 5) == -759375);
+}
 
 int main(int argc, char *argv[])
 {
