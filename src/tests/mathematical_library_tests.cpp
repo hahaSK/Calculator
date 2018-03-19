@@ -66,10 +66,7 @@ TEST(testing, Multiply)
 
 TEST(Substraction, Basics)
 {
-	ASSERT_EQ(sub(2, 2) == 0);
-	ASSERT_ANY_THROW(sub(e, 25));
-	ASSERT_ANY_THROW(sub(25, e));
-	ASSERT_ANY_THROW(sub(e, f));
+	ASSERT_EQ(sub(2, 2) == 0)
 	ASSERT_EQ(sub(2, 7) == -5);
 	ASSERT_EQ(sub(25, 100) == -75);
 	ASSERT_EQ(sub(100, 25) == 75);

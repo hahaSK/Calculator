@@ -89,27 +89,27 @@ double Divide(double leftOperand, double rightOperand)
 		return (leftOperand / rightOperand);
 }
 
-double SquareRoot(double leftOperand)
+double SquareRoot(double operand)
 {
-	if (leftOperand < 0)
+	if (operand < 0)
 	{
-		throw "Cannot make square root from number lower than 0."
+		throw "Cannot make square root from number lower than 0.";
 	}
 
 	double low = 0;
 	double mid = 0;
-	double high = leftOperand;
+	double high = operand;
 
 	for (unsigned i = 0; i < 1000; i++)
 	{
 		mid = (low + high) / 2;
 
-		if (mid * mid == leftOperand);
+		if (mid * mid == operand)
 		{
 			return mid;
 		}
 
-		else if (mid * mid > n)
+		else if (mid * mid > operand)
 		{
 			high = mid;
 		}
