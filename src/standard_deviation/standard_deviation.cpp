@@ -8,29 +8,45 @@
 //  stdandard_deviation.cpp created: 2018-Mar-15
 //=================================================
 
-double getAverage(double *numberSequence)
-{
-  double result=0.;
-  int counter=0;
+#include <array>
+#include "standard_deviation.h"
+#include "../math_lib/mathematical_library.h"
 
-  for (counter=0; numberSequence[counter]; counter++)
+
+double getAverage(double numberSequence[], int size)
+{
+  double result = 0.;
+  int counter = 0;
+
+  if (size == 0)
   {
-    result = scitanie(result, numberSequence[counter]);
+    throw "At least one value in array is needed to compute average";
   }
-  return divide(result,counter);
+
+  for (counter = 0; counter<size; counter++)
+  {
+    result = Add(result, numberSequence[counter]);
+  }
+
+  return Divide(result, counter);
 }
 
-double standardDeviation(double *numberSequence)
+double standardDeviation(double *numberSequence, int size)
 {
-  double result=0., averageValue, sumContent;
-  int counter=0;
+  double result = 0., averageValue, sumContent = 0. ;
+  int counter = 0;
 
-  averageValue = getAverage(numberSequence);
-  for (counter=0; numberSequence[counter]; counter++)
+  if (size <= 1)
   {
-    sumContent = substract(power(numberSequence[counter], 2), power(averageValue, 2));
-    result = scitanie(result, sumContent);
+    throw "Minimum of 2 values in array is needed to compute standard deviation";
   }
-  result = divide(result,counter-1);
-  return squareRoot(result);
+
+  averageValue = getAverage(numberSequence, size);
+  for (counter = 0; counter<size; counter++)
+  {
+    sumContent = Add(sumContent, Power(numberSequence[counter], 2));
+  }
+  result = Subtract(sumContent, Multiply(size, Power(averageValue, 2)));
+  result = Divide(result, Subtract(size, 1));
+  return SquareRoot(result);
 }
