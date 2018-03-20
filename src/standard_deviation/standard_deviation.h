@@ -16,14 +16,14 @@
  * @param numberSequence - array containing sequence of numbers
  * @return - returns the average value in array of numbers
  */
-double getAverage(double *numberSequence);
+double getAverage(double *numberSequence, int size);
 
 /**
  * Compute standard deviation of numbers in array
  * @param numberSequence - array containing sequence of numbers
  * @return - returns the standard deviation
  */
-double standardDeviation(double *numberSequence);
+double standardDeviation(double *numberSequence, int size);
 
 
 #endif //STANDARD_DEVIATION_H
