@@ -17,45 +17,48 @@
 #include "standard_deviation.h"
 #include "../math_lib/mathematical_library.h"
 
+bool is_digits(const std::string &str)
+{
+  return str.find_first_not_of("0123456789.-") == std::string::npos;
+}
 
-int getArray(double numberSequence[])
+
+void getArray(std::vector<double> &numberSequence)
 {
   std::string values;
   std::cout << "Enter any number of values (with or without decimal point), separated by \";\" " << std::endl;
   std::cin >> values;
 
-  int size = 0;
   std::string delimiter = ";";
   size_t pos = 0;
   std::string token;
 
+
   while ((pos = values.find(delimiter)) != std::string::npos)
   {
     token = values.substr(0, pos);
-    numberSequence[size] = stod(token);
+    if (!(is_digits(token)) || (token.empty()))
+    {
+      throw std::invalid_argument("Invalid entry");
+    }
+    numberSequence.push_back (stod(token));
     values.erase(0, pos + delimiter.length());
-    size++;
   }
   token = values.substr(0, pos);
-  numberSequence[size] = stod(values);
-  size++;
-
-  return size;
-
+  numberSequence.push_back (stod(values));
 }
 
-double getAverage(double numberSequence[], int size)
+double getAverage(std::vector<double> &numberSequence)
 {
-  size = getArray(numberSequence);
   double result = 0.;
   int counter = 0;
 
-  if (size == 0)
+  if (numberSequence.empty())
   {
-    throw "At least one value in array is needed to compute average";
+    throw std::invalid_argument("At least one value in array is needed to compute average");
   }
 
-  for (counter = 0; counter < size; counter++)
+  for (counter = 0; counter < numberSequence.size(); counter++)
   {
     result = Add(result, numberSequence[counter]);
   }
@@ -63,22 +66,22 @@ double getAverage(double numberSequence[], int size)
   return Divide(result, counter);
 }
 
-double standardDeviation(double *numberSequence, int size)
+double standardDeviation(std::vector<double> &numberSequence)
 {
   double result, averageValue, sumContent = 0.;
   int counter = 0;
 
-  averageValue = getAverage(numberSequence, size);
-  if (size <= 1)
+  averageValue = getAverage(numberSequence);
+  if (numberSequence.size() <= 1)
   {
-    throw "Minimum of 2 values in array is needed to compute standard deviation";
+    throw std::invalid_argument("Minimum of 2 values in array is needed to compute standard deviation");
   }
 
-  for (counter = 0; counter < size; counter++)
+  for (counter = 0; counter < numberSequence.size(); counter++)
   {
     sumContent = Add(sumContent, Power(numberSequence[counter], 2));
   }
-  result = Subtract(sumContent, Multiply(size, Power(averageValue, 2)));
-  result = Divide(result, Subtract(size, 1));
+  result = Subtract(sumContent, Multiply(numberSequence.size(), Power(averageValue, 2)));
+  result = Divide(result, Subtract(numberSequence.size(), 1));
   return SquareRoot(result);
 }

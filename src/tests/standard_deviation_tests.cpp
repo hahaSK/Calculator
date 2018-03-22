@@ -17,24 +17,30 @@
 
 TEST(testing, AverageValue)
 {
-  double array1[0];
-  double array2[2] = {5, 5};
-  double array3[8] = {1, 4, -7.5, -8.6, 4.9, 10, 0, 12.9};;
+  std::vector<double> array1;
+  std::vector<double> array2; //{5;5};
+  std::vector<double> array3; //{1;4;-7.5;-8.6;4.9;10;0;12.9};;
 
-  ASSERT_ANY_THROW(getAverage(array1, 0));
+  ASSERT_ANY_THROW(getArray(array1));
+  ASSERT_ANY_THROW(getAverage(array1));
 
-  EXPECT_NEAR(getAverage(array2, 2), 5, 5 * DESIRED_PRECISION);
-  EXPECT_NEAR(getAverage(array3, 8), 2.0875, 2.0875 * DESIRED_PRECISION);
+  ASSERT_NO_THROW(getArray(array2));
+  EXPECT_NEAR(getAverage(array2), 5, 5 * DESIRED_PRECISION);
+  ASSERT_NO_THROW(getArray(array3));
+  EXPECT_NEAR(getAverage(array3), 2.0875, 2.0875 * DESIRED_PRECISION);
 }
 
 TEST(testing, StandardDeviation)
 {
-  double array1[0];
-  double array2[2] = {5, 5};
-  double array3[8] = {1, 4, -7.5, -8.6, 4.9, 10, 0, 12.9};
+  std::vector<double> array1;
+  std::vector<double> array2; //{5;5};
+  std::vector<double> array3; //{1;4;-7.5;-8.6;4.9;10;0;12.9};;
 
-  ASSERT_ANY_THROW(standardDeviation(array1, 0));
+  ASSERT_ANY_THROW(getArray(array1));
+  ASSERT_ANY_THROW(standardDeviation(array1));
 
-  EXPECT_NEAR(standardDeviation(array2, 2), 0, DESIRED_PRECISION);
-  EXPECT_NEAR(standardDeviation(array3, 8), 7.58541, 7.58541 * DESIRED_PRECISION);
+  ASSERT_NO_THROW(getArray(array2));
+  EXPECT_NEAR(standardDeviation(array2), 0, DESIRED_PRECISION);
+  ASSERT_NO_THROW(getArray(array3));
+  EXPECT_NEAR(standardDeviation(array3), 7.58541, 7.58541 * DESIRED_PRECISION);
 }

@@ -15,23 +15,23 @@
 /**
  * Reads and parses sequence of numbers divided by ";"
  * @param numberSequence - array containing sequence of numbers
- * @return returns number of values entered and filled numberSequence array
+ * @return returns filled numberSequence array
  */
-int getArray(double numberSequence[]);
+void getArray(std::vector<double> &numberSequence);
 
 /**
  * Find the average value in array of numbers
  * @param numberSequence - array containing sequence of numbers
  * @return - returns the average value in array of numbers
  */
-double getAverage(double *numberSequence, int size);
+double getAverage(std::vector<double> &numberSequence);
 
 /**
  * Compute standard deviation of numbers in array
  * @param numberSequence - array containing sequence of numbers
  * @return - returns the standard deviation
  */
-double standardDeviation(double *numberSequence, int size);
+double standardDeviation(std::vector<double> &numberSequence);
 
 
 #endif //STANDARD_DEVIATION_H
