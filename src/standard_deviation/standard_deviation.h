@@ -11,6 +11,14 @@
 #ifndef STANDARD_DEVIATION_H
 #define STANDARD_DEVIATION_H
 
+
+/**
+ * Reads and parses sequence of numbers divided by ";"
+ * @param numberSequence - array containing sequence of numbers
+ * @return returns number of values entered and filled numberSequence array
+ */
+int getArray(double numberSequence[]);
+
 /**
  * Find the average value in array of numbers
  * @param numberSequence - array containing sequence of numbers

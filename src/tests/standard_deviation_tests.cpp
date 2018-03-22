@@ -19,7 +19,7 @@ TEST(testing, AverageValue)
 {
   double array1[0];
   double array2[2] = {5, 5};
-  double array3[8] = {1, 4, -7.5, -8.6, 4.9, 10, 0, 12.9};
+  double array3[8] = {1, 4, -7.5, -8.6, 4.9, 10, 0, 12.9};;
 
   ASSERT_ANY_THROW(getAverage(array1, 0));
 
