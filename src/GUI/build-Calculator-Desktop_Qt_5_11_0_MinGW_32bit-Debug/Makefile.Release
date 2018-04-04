@@ -98,7 +98,9 @@ compiler_rcc_make_all: release/qrc_imageresources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_imageresources.cpp
 release/qrc_imageresources.cpp: ../Calculator/imageresources.qrc \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/bin/rcc.exe
+		D:/Programovanie/Qt/5.11.0/mingw53_32/bin/rcc.exe \
+		../Calculator/2000px-Calculator_icon.ico \
+		../Calculator/sqrt.png
 	D:\Programovanie\Qt\5.11.0\mingw53_32\bin\rcc.exe -name imageresources ..\Calculator\imageresources.qrc -o release\qrc_imageresources.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -357,7 +359,10 @@ release/main.o: ../Calculator/main.cpp ../Calculator/mainwindow.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtCore/qeventloop.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtGui/qguiapplication.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QPushButton \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\Calculator\main.cpp
 
 release/mainwindow.o: ../Calculator/mainwindow.cpp ../Calculator/mainwindow.h \
@@ -477,15 +482,12 @@ release/mainwindow.o: ../Calculator/mainwindow.cpp ../Calculator/mainwindow.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QMenuBar \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qmenubar.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qmenu.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qaction.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qactiongroup.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QStatusBar \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qstatusbar.h \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QToolBar \
-		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qtoolbar.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QLabel \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qframe.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QPushButton \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		D:/Programovanie/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Calculator\mainwindow.cpp
 

@@ -14,24 +14,14 @@
 #include <typeinfo>
 #include "math_lib/mathematical_library.h"
 
+#include "GUI/Calculator/mainwindow.h"
+#include <QApplication>
+
 int main()
 {
-  std::cout << "Hello, World!" << std::endl;
-  std::cout << Subtract(5, 5) << std::endl;
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-  try
-  {
-
-    std::cout << Power(5, 5) << std::endl;
-  }
-  catch (char const *ex)
-  {
-    std::cout << ex;
-    return EXIT_FAILURE;
-  }
-
-
-  int i;
-  std::cin >> i;
-  return 0;
+    return a.exec();
 }
