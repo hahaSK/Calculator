@@ -45,17 +45,16 @@ set(SOURCE_FILES main.cpp math_lib/mathematical_library.cpp)
 set(HEADER_FILES math_lib/mathematical_library.h)
 
 ### GUI ###
-set(SOURCES mainwindow.cpp)
 
-set(MOC_HEADERS mainwindow.h)
+set(GUI_SOURCES mainwindow.cpp)
 
-set(UIS mainwindow.ui)
+set(GUI_HEADERS mainwindow.h)
 
-set(RESOURCES imageresources.qrc)
+set(GUI_UIS mainwindow.ui)
+
+set(GUI_RESOURCES imageresources.qrc)
 
 # Next lines needed for building all Qt projects
-set(CMAKE_AUTOMOC ON)
-find_package(Qt4 4.6.0 REQUIRED QtGui QtXml)
 find_package(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 add_definitions(${QT_DEFINITIONS})
@@ -64,15 +63,22 @@ include_directories(${CMAKE_BINARY_DIR})
 # Next, using precompiler, compiler and linker
 
 # using Qt meta-system (precompiler)
-QT4_ADD_RESOURCES(RES_SOURCES ${RESOURCES})
-QT4_WRAP_UI(UI_HEADERS ${UIS})
-QT4_WRAP_CPP(MOC_SRCS ${MOC_HEADERS})
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# compile
+if(UNIX)
+    add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES}
+            ${GUI_SOURCES} ${GUI_HEADERS} ${GUI_UIS} ${GUI_RESOURCES})
+elseif(WIN32) # if you using Windows ™ Operating System.
+    add_executable(${PROJECT_NAME} WIN32 ${SOURCE_FILES} ${HEADER_FILES}
+            ${GUI_SOURCES} ${GUI_HEADERS} ${GUI_UIS} ${GUI_RESOURCES})
+endif(UNIX)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES}  ${SOURCES} ${MOC_SRCS} ${RES_SOURCES} ${UI_HEADERS})
-
-# Use the Widgets module from Qt.
-target_link_libraries(PROJECT_NAME ${QT_LIBRARIES})
+# build it (link libraries)
+target_link_libraries( ${PROJECT_NAME} ${QT_LIBRARIES} )
 
 ##########################
 ##  TESTS
