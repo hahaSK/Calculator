@@ -1,7 +1,10 @@
-#Visual studio folders
+# Qt Creator build folder
+build-Calculator-Desktop*/
+
+# Visual studio folders
 *.vs
 
-#Clion IDE
+# Clion IDE
 **/cmake-build-debug
 .idea
 
