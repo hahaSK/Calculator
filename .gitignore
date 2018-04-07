@@ -1,8 +1,10 @@
 # Qt Creator build folder
 build-Calculator-Desktop*/
 
-# Visual studio folders
+# Visual studio folders and files
 *.vs
+*.ilk
+*.pdb
 
 # Clion IDE
 **/cmake-build-debug
@@ -25,6 +27,9 @@ build-Calculator-Desktop*/
 *.so
 *.dylib
 *.dll
+!Qt5Cored.dll
+!Qt5Guid.dll
+!Qt5Widgetsd.dll
 
 # Fortran module files
 *.mod
