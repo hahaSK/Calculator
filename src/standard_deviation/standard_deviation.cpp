@@ -14,38 +14,38 @@
 #include <iterator>
 #include <vector>
 #include <sstream>
+#include <fstream>
 #include "standard_deviation.h"
 #include "../math_lib/mathematical_library.h"
 
-bool is_digits(const std::string &str)
-{
-  return str.find_first_not_of("0123456789.-") == std::string::npos;
-}
-
-
 void getArray(std::vector<double> &numberSequence)
 {
-  std::string values;
-  std::cout << "Enter any number of values (with or without decimal point), separated by \";\" " << std::endl;
-  std::cin >> values;
+  std::cout << "Enter path to file, you want to read the arguments from " << std::endl;
+  std::string fname, line;
+  std::cin >> fname;
 
-  std::string delimiter = ";";
-  size_t pos = 0;
-  std::string token;
+  double n;
 
-
-  while ((pos = values.find(delimiter)) != std::string::npos)
+  std::ifstream myfile(fname);
+  getline(myfile,line);
+  if (myfile.is_open() )
   {
-    token = values.substr(0, pos);
-    if (!(is_digits(token)) || (token.empty()))
-    {
-      throw std::invalid_argument("Invalid entry");
-    }
-    numberSequence.push_back (stod(token));
-    values.erase(0, pos + delimiter.length());
+    myfile.close();
   }
-  token = values.substr(0, pos);
-  numberSequence.push_back (stod(values));
+
+  std::istringstream sstr(line);
+
+  while(sstr >> n)
+  {
+    if(sstr.fail())
+    {
+      sstr.clear();
+      std::string dummy;
+      sstr >> dummy;
+      continue;
+    }
+    numberSequence.push_back(n);
+  }
 }
 
 double getAverage(std::vector<double> &numberSequence)

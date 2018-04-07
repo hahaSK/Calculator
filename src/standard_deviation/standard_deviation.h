@@ -13,7 +13,8 @@
 
 
 /**
- * Reads and parses sequence of numbers divided by ";"
+ * Reads path to file from user
+ * Reads and parses sequence of numbers from standard input divided by " "
  * @param numberSequence - array containing sequence of numbers
  * @return returns filled numberSequence array
  */

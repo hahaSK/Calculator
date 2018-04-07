@@ -34,7 +34,7 @@ TEST(testing, StandardDeviation)
 {
   std::vector<double> array1;
   std::vector<double> array2; //{5;5};
-  std::vector<double> array3; //{1;4;-7.5;-8.6;4.9;10;0;12.9};;
+  std::vector<double> array3; //{1 4 -7.5 -8.6 4.9 10 0 12.9};;
 
   ASSERT_ANY_THROW(getArray(array1));
   ASSERT_ANY_THROW(standardDeviation(array1));
