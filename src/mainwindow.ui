@@ -873,6 +873,26 @@ QPushButton:pressed {
      <string>Backspace</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labOperator">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>20</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+ background-color :rgb(255, 242, 228);
+ }
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>pshbtn1</zorder>
    <zorder>pshbtn2</zorder>
    <zorder>pshbtn3</zorder>
@@ -896,6 +916,7 @@ QPushButton:pressed {
    <zorder>pshbtnModulo</zorder>
    <zorder>pshbtnClear</zorder>
    <zorder>pshbtnDelete</zorder>
+   <zorder>labOperator</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

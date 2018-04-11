@@ -27,6 +27,7 @@ build-Calculator-Desktop*/
 *.so
 *.dylib
 *.dll
+!qwindowsd.dll
 !Qt5Cored.dll
 !Qt5Guid.dll
 !Qt5Widgetsd.dll
