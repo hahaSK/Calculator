@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "math_lib/mathematical_library.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pshbtn0_clicked()
 {
-    ui->labInput->setText(ui->labInput->text().append('0'));
+	ui->labInput->setText(ui->labInput->text().append('0'));
 }
 
 void MainWindow::on_pshbtn1_clicked()
@@ -101,7 +102,8 @@ void MainWindow::on_pshbtnCalculate_clicked()
 
 void MainWindow::on_pshbtnSQRT_clicked()
 {
-
+	double result;
+	result = Add(20, 20);
 }
 
 void MainWindow::on_pshbtnDelete_clicked()
