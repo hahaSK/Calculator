@@ -9,6 +9,8 @@
 //  mathematical_library.h created: 2018-Mar-09
 //===========================================================
 
+#include <vector>
+
 /**
 * Add two numbers
 * @param leftOperand - augend
@@ -70,3 +72,10 @@ int Factorial(int operand);
  * @return result
  */
 int Modulo(int leftOperand, int rightOperand);
+
+/**
+* Calculating standard deviaton of given numbers
+* @param values - vector of values for standard deviaton
+* @return result
+*/
+double StandardDeviaton(std::vector<double> values);

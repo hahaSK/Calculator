@@ -16,10 +16,10 @@
 
 TEST(Addition, Basics)
 {
- ASSERT_EQ(Add(5,5),10);
- EXPECT_EQ(Add(10,-5),5);
- EXPECT_EQ(Add(-15,-10),-25);
- EXPECT_EQ(Add(3.3, 1.2),4.5);
+  ASSERT_EQ(Add(5,5),10);
+  EXPECT_EQ(Add(10,-5),5);
+  EXPECT_EQ(Add(-15,-10),-25);
+  EXPECT_EQ(Add(3.3, 1.2),4.5);
 }
 
 TEST(Factorial, Basics)
@@ -60,22 +60,34 @@ TEST(Multiply, Basics)
 
 TEST(Substraction, Basics)
 {
-	ASSERT_EQ(Subtract(2, 2), 0);
-	ASSERT_EQ(Subtract(2, 7), -5);
-	ASSERT_EQ(Subtract(25, 100), -75);
-	ASSERT_EQ(Subtract(100, 25), 75);
+  ASSERT_EQ(Subtract(2, 2), 0);
+  ASSERT_EQ(Subtract(2, 7), -5);
+  ASSERT_EQ(Subtract(25, 100), -75);
+  ASSERT_EQ(Subtract(100, 25), 75);
 }
 
 TEST(Power, Basics)
 {
-	ASSERT_EQ(Power(2, 2), 4);
-	ASSERT_EQ(Power(2, 10), 1024);
-	ASSERT_EQ(Power(-5, 2), 25);
-	ASSERT_EQ(Power(-7, 8), 5764801);
-	ASSERT_ANY_THROW(Power(2, -5));
-	ASSERT_EQ(Power(7, 0), 1);
-	ASSERT_EQ(Power(22, 3), 10648);
-	ASSERT_EQ(Power(-15, 5), -759375);
+  ASSERT_EQ(Power(2, 2), 4);
+  ASSERT_EQ(Power(2, 10), 1024);
+  ASSERT_EQ(Power(-5, 2), 25);
+  ASSERT_EQ(Power(-7, 8), 5764801);
+  ASSERT_ANY_THROW(Power(2, -5));
+  ASSERT_EQ(Power(7, 0), 1);
+  ASSERT_EQ(Power(22, 3), 10648);
+  ASSERT_EQ(Power(-15, 5), -759375);
+}
+
+TEST(StandardDeviaton, Basics)
+{
+  std::vector<double> values(10);
+
+  for (int i = 0; i < 10; i++)
+  {
+    values[i] = i;
+  }
+
+  EXPECT_DOUBLE_EQ(StandardDeviaton(values), 2.872281323269);
 }
 
 int main(int argc, char *argv[])

@@ -127,3 +127,29 @@ double SquareRoot(double operand)
   }
   return mid;
 }
+
+double StandardDeviaton(std::vector<double> values)
+{
+  double size = values.size();
+  double average;
+  double sum = 0;
+  double temp;
+  double var = 0;
+
+  for (int i = 0; i < size; i++)
+  {
+	  sum = sum + values[i];
+  }
+
+  average = sum / size;
+
+  for (int i = 0; i < size; i++)
+  {
+	  temp = values[i] - average;
+	  temp = Power(temp, 2);
+	  var = var + temp;
+  }
+
+  var = var / size;
+  return SquareRoot(var);
+}
