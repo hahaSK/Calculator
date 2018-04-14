@@ -40,6 +40,8 @@ private slots:
 
     void on_pshbtnCalculate_clicked();
 
+	void on_pshbtnFactorial_clicked();
+
     void on_pshbtnAdditiveOperator_clicked();
 
     void on_pshbtnSubstractiveOperator_clicked();
@@ -52,7 +54,11 @@ private slots:
 
     void on_pshbtnSQRT_clicked();
 
+	void on_pshbtnModulo_clicked();
+
     void on_pshbtnDelete_clicked();
+
+	void on_pshbtnClear_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -650,7 +650,8 @@ QPushButton:pressed {
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #ffffff, stop: 1 #55ff00);
-}</string>
+}
+QToolTip { color: black; background-color: white; border: none; }</string>
     </property>
     <property name="text">
      <string/>
@@ -759,13 +760,11 @@ QPushButton:pressed {
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #ffffff, stop: 1 #55ff00);
-}</string>
+}
+QToolTip { color: black; background-color: white; border: none; }</string>
     </property>
     <property name="text">
      <string>!</string>
-    </property>
-    <property name="shortcut">
-     <string>*</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pshbtnModulo">
@@ -790,20 +789,18 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(199, 222, 255);
   border: 1px solid gray;
   border-radius: 10px;
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #ffffff, stop: 1 #55ff00);
-}</string>
+}
+QToolTip { color: black; background-color: white; border: none; }</string>
     </property>
     <property name="text">
      <string>Mod</string>
-    </property>
-    <property name="shortcut">
-     <string>*</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pshbtnClear">
@@ -873,6 +870,26 @@ QPushButton:pressed {
      <string>Backspace</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labOperator">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>361</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+ background-color :rgb(255, 242, 228);
+ }
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>pshbtn1</zorder>
    <zorder>pshbtn2</zorder>
    <zorder>pshbtn3</zorder>
@@ -896,6 +913,7 @@ QPushButton:pressed {
    <zorder>pshbtnModulo</zorder>
    <zorder>pshbtnClear</zorder>
    <zorder>pshbtnDelete</zorder>
+   <zorder>labOperator</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
