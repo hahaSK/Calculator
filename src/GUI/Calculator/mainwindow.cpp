@@ -100,6 +100,12 @@ void MainWindow::on_pshbtnAdditiveOperator_clicked()
 
 void MainWindow::on_pshbtnSubstractiveOperator_clicked()
 {
+    if (ui->labInput->text() == NULL) // Check if label is empty
+    {
+        ui->labInput->setText("-"); // Number is negative
+        return;
+    }
+
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
 	{
 		MainWindow::on_pshbtnCalculate_clicked();
@@ -273,6 +279,7 @@ void MainWindow::on_pshbtnCalculate_clicked()
         }
         else if (powClicked)
         {
+            rightNum = (int) rightNum; // Reconvert to integer
             result = Power(leftNum, rightNum);
 
             labResult = QString::number(result, 'g', 10); // Formating the c++ double result to QString, needs to be shown in Label labInput .
@@ -297,6 +304,7 @@ void MainWindow::on_pshbtnCalculate_clicked()
 
         else if (facClicked)
         {
+            rightNum = (int) rightNum; // Reconvert to integer
             result = Factorial(rightNum);
 
             labResult = QString::number(result, 'g', 10); // Formating the c++ double result to QString, needs to be shown in Label labInput .
@@ -309,6 +317,8 @@ void MainWindow::on_pshbtnCalculate_clicked()
 
         else if (modClicked)
         {
+            leftNum = (int) leftNum; // Reconvert to integer
+            rightNum = (int) rightNum; // Reconvert to integer
             result = Modulo(leftNum, rightNum);
 
             labResult = QString::number(result, 'g', 10); // Formating the c++ double result to QString, needs to be shown in Label labInput .
@@ -407,4 +417,3 @@ void MainWindow::disableOrEnableButtonsOnException(bool exception)
         ui->pshbtnSubstractiveOperator->setEnabled(true);
         }
 }
-

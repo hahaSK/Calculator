@@ -63,6 +63,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
+    /**
+     * Disable or enable buttons when exception is thrown
+     * @param exception - is exception ?
+     */
     void disableOrEnableButtonsOnException(bool exception);
 };
 
