@@ -10,6 +10,7 @@
 //===========================================================
 
 #include "mathematical_library.h"
+#include <stdexcept>
 
 double Add(double leftOperand, double rightOperand)
 {
@@ -31,11 +32,11 @@ double Power(double leftOperand, int rightOperand)
   double result = 1;
   if (rightOperand < 0)
   {
-    throw "Power cannot be negative.";
+    throw std::runtime_error("Power cannot be negative.");
   }
   else if (leftOperand == 0 && rightOperand <= 0)
   {
-    throw "0 power of 0 is not defined.";
+    throw std::runtime_error("0 power of 0 is not defined.");
   }
 
   if (rightOperand == 0)
@@ -61,7 +62,7 @@ int Factorial(int operand)
 
   if (operand < 0)
   {
-    throw "Number for factorial cannot be negative";
+    throw std::runtime_error("Number for factorial cannot be negative");
   }
 
   for (int i = operand - 1; i > 0; i--)
@@ -77,7 +78,7 @@ int Modulo(int leftOperand, int rightOperand)
   int result;
   if (rightOperand == 0)
   {
-    throw "Division by zero is not defined.";
+    throw std::runtime_error("Division by zero is not defined.");
   }
 
   result = int(Divide(leftOperand, rightOperand));
@@ -88,7 +89,7 @@ double Divide(double leftOperand, double rightOperand)
 {
   if (rightOperand == 0)
   {
-    throw "Cannot divide with 0.";
+    throw std::runtime_error("Cannot divide with 0.");
   }
 
   else
@@ -99,7 +100,7 @@ double SquareRoot(double operand)
 {
   if (operand < 0)
   {
-    throw "Cannot make square root from number lower than 0.";
+    throw std::runtime_error("Cannot make square root from number lower than 0.");
   }
 
   double low = 0;

@@ -35,7 +35,8 @@ set(GUI_RESOURCES imageresources.qrc)
 
 # Next lines needed for building all Qt projects
 if(WIN32)
-set(Qt5_DIR "C:/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
+set(Qt5_DIR "D:/Programovanie/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
+#set(Qt5_DIR "C:/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
 endif(WIN32)
 find_package(Qt5 COMPONENTS Core Widgets Gui)
 

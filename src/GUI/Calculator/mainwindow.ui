@@ -879,6 +879,12 @@ QPushButton:pressed {
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
  background-color :rgb(255, 242, 228);
@@ -888,6 +894,9 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <zorder>pshbtn1</zorder>

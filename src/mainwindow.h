@@ -62,6 +62,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void disableOrEnableButtonsOnException(bool exception);
 };
 
 #endif // MAINWINDOW_H
