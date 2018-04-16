@@ -35,6 +35,8 @@ Calculator.vcxproj*
 !Qt5Guid.dll
 !Qt5Widgetsd.dll
 
+!libqxcb.so
+
 # Fortran module files
 *.mod
 *.smod
