@@ -72,10 +72,3 @@ int Factorial(int operand);
  * @return result
  */
 int Modulo(int leftOperand, int rightOperand);
-
-/**
-* Calculating standard deviaton of given numbers
-* @param values - vector of values for standard deviaton
-* @return result
-*/
-double StandardDeviaton(std::vector<double> values);

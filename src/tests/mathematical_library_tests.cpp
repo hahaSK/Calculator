@@ -78,18 +78,6 @@ TEST(Power, Basics)
   ASSERT_EQ(Power(-15, 5), -759375);
 }
 
-TEST(StandardDeviaton, Basics)
-{
-  std::vector<double> values(10);
-
-  for (int i = 0; i < 10; i++)
-  {
-    values[i] = i;
-  }
-
-  EXPECT_DOUBLE_EQ(StandardDeviaton(values), 2.872281323269);
-}
-
 int main(int argc, char *argv[])
 {
 	testing::InitGoogleTest(&argc, argv);
