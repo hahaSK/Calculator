@@ -14,7 +14,7 @@ project(Calculator)
 
 # create exacutables in src/bin
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
-   
+
 #For VS environment
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
@@ -35,8 +35,8 @@ set(GUI_RESOURCES imageresources.qrc)
 
 # Next lines needed for building all Qt projects
 if(WIN32)
-set(Qt5_DIR "D:/Programovanie/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
-#set(Qt5_DIR "C:/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
+    set(Qt5_DIR "D:/Programovanie/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
+    #set(Qt5_DIR "C:/Qt/5.10.1/msvc2017_64/lib/cmake/Qt5")
 endif(WIN32)
 find_package(Qt5 COMPONENTS Core Widgets Gui)
 
@@ -74,3 +74,51 @@ add_executable(Standard_deviation ${RESOURCE_FILES2} ${HEADER_FILES2})
 ##########################
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
+
+##########################
+##  INSTALLATION
+##########################
+
+#
+# Tell CMake to install the windows runtime libraries to the programs
+# directory and tell CPack that they belong to the applications component
+#
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
+include(InstallRequiredSystemLibraries)
+install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
+        DESTINATION bin
+        COMPONENT applications)
+
+if(WIN32)
+    set(runtime_dlls
+            bin/msvcp140d.dll
+            bin/ucrtbased.dll
+            bin/vcruntime140d.dll
+            bin/Qt5Cored.dll
+            bin/Qt5Guid.dll
+            bin/Qt5Widgetsd.dll)
+endif(WIN32)
+
+if(WIN32)
+    install(TARGETS ${PROJECT_NAME}
+            RUNTIME DESTINATION bin
+            LIBRARY DESTINATION bin
+            ARCHIVE DESTINATION bin/static
+            COMPONENT applications)
+    install(FILES runtime_dlls DESTINATION bin COMPONENT dllLibraries)
+elseif(UNIX)
+
+endif(WIN32)
+#install(TARGETS mySharedLib DESTINATION /some/full/path)
+
+### CPack ###
+set(CPACK_PACKAGE_NAME "CPackExampleInstaller")
+set(CPACK_PACKAGE_VENDOR "Ziv Yaniv")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example showing CPack in action")
+set(CPACK_PACKAGE_VERSION_MAJOR "1")
+set(CPACK_PACKAGE_VERSION_MINOR "0")
+set(CPACK_PACKAGE_VERSION_PATCH "0")
+set(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "CPackExample")
+
+include(CPack)
