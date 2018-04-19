@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>2000px-Calculator_icon.ico</file>
+        <file>sqrt.png</file>
+    </qresource>
+</RCC>
