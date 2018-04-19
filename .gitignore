@@ -3,6 +3,8 @@ build-Calculator-Desktop*/
 .qmake.stash
 Calculator.pro*
 Calculator.vcxproj*
+# remove GUI folder, merging to master
+GUI
 
 # Visual studio folders and files
 *.vs
