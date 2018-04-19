@@ -31,6 +31,9 @@ find_package(Threads REQUIRED)
 
 add_executable(${PROJECT_NAME}
         tests/mathematical_library_tests.cpp
+        tests/standard_deviation_tests.cpp
+        standard_deviation/standard_deviation.cpp
+        standard_deviation/standard_deviation.h
         math_lib/mathematical_library.cpp
         math_lib/mathematical_library.h
         )

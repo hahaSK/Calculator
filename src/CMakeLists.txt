@@ -60,6 +60,15 @@ endif(UNIX)
 # build it (link libraries)
 target_link_libraries( ${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets)
 
+### PROFILING ###
+
+set(RESOURCE_FILES2 standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
+set(HEADER_FILES2 standard_deviation/standard_deviation.h math_lib/mathematical_library.h)
+
+add_executable(Standard_deviation ${RESOURCE_FILES2} ${HEADER_FILES2})
+
+###
+
 ##########################
 ##  TESTS
 ##########################
