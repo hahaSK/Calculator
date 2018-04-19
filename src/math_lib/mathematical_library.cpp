@@ -27,13 +27,15 @@ double Multiply(double leftOperand, double rightOperand)
   return leftOperand * rightOperand;
 }
 
-double Power(double leftOperand, int rightOperand)
+double Power(double leftOperand, long long int rightOperand)
 {
   double result = 1;
+
   if (rightOperand < 0)
   {
     throw std::runtime_error("Power cannot be negative.");
   }
+
   else if (leftOperand == 0 && rightOperand <= 0)
   {
     throw std::runtime_error("0 power of 0 is not defined.");
@@ -51,9 +53,9 @@ double Power(double leftOperand, int rightOperand)
   return result;
 }
 
-int Factorial(int operand)
+unsigned long long int Factorial(unsigned long long int operand)
 {
-  int result = operand;
+  unsigned long long int result = operand;
 
   if (operand == 1 || operand == 0)
   {
@@ -65,17 +67,23 @@ int Factorial(int operand)
     throw std::runtime_error("Number for factorial cannot be negative");
   }
 
-  for (int i = operand - 1; i > 0; i--)
+  for (unsigned long long int i = operand - 1; i > 0; i--)
   {
     result *= i;
+  }
+
+  if (result == 0)
+  {
+    throw std::runtime_error("Please use smaller numbers");
   }
 
   return result;
 }
 
-int Modulo(int leftOperand, int rightOperand)
+int Modulo(long long int leftOperand, long long int rightOperand)
 {
   int result;
+
   if (rightOperand == 0)
   {
     throw std::runtime_error("Division by zero is not defined.");
