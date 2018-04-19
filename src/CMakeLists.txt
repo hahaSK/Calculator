@@ -22,10 +22,14 @@ set(HEADER_FILES math_lib/mathematical_library.h)
 
 add_executable(Calculator ${RESOURCE_FILES} ${HEADER_FILES})
 
-set(RESOURCE_FILES2 main.cpp standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
+### PROFILING ###
+
+set(RESOURCE_FILES2 standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
 set(HEADER_FILES2 standard_deviation/standard_deviation.h math_lib/mathematical_library.h)
 
 add_executable(Standard_deviation ${RESOURCE_FILES2} ${HEADER_FILES2})
+
+###
 
 ##########################
 ##  TESTS

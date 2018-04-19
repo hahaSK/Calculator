@@ -85,3 +85,13 @@ double standardDeviation(std::vector<double> &numberSequence)
   result = Divide(result, Subtract(numberSequence.size(), 1));
   return SquareRoot(result);
 }
+
+int main()
+{
+  std::vector<double> array1;
+
+  getArray(array1);
+  std::cout << standardDeviation(array1) << std::endl;
+
+  return 0;
+}
