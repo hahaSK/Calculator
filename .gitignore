@@ -1,7 +1,17 @@
-#Visual studio folders
-*.vs
+# Qt Creator build folder
+build-Calculator-Desktop*/
+.qmake.stash
+Calculator.pro*
+Calculator.vcxproj*
+# remove GUI folder, merging to master
+GUI
 
-#Clion IDE
+# Visual studio folders and files
+*.vs
+*.ilk
+*.pdb
+
+# Clion IDE
 **/cmake-build-debug
 .idea
 
@@ -22,6 +32,12 @@
 *.so
 *.dylib
 *.dll
+!qwindowsd.dll
+!Qt5Cored.dll
+!Qt5Guid.dll
+!Qt5Widgetsd.dll
+
+!libqxcb.so
 
 # Fortran module files
 *.mod

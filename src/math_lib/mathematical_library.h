@@ -47,7 +47,7 @@ double Divide(double leftOperand, double rightOperand);
  * @param rightOperand - power
  * @return result
  */
-double Power(double leftOperand, int rightOperand);
+double Power(double leftOperand, long long int rightOperand);
 
 /**
 * Function performs a square root of an number. Function throws an assertion when operand is less than 0.
@@ -61,7 +61,7 @@ double SquareRoot(double operand);
 * @param operand - number for factorial
 * @return result
 */
-int Factorial(int operand);
+unsigned long long int Factorial(unsigned long long int operand);
 
 /**
  * Remainder of the division of leftOperand by rightOperand
@@ -69,4 +69,4 @@ int Factorial(int operand);
  * @param rightOperand - divisor
  * @return result
  */
-int Modulo(int leftOperand, int rightOperand);
+int Modulo(long long int leftOperand, long long int rightOperand);
