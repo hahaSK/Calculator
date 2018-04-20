@@ -53,7 +53,7 @@ double Power(double leftOperand, long long int rightOperand)
   return result;
 }
 
-unsigned long long int Factorial(unsigned long long int operand)
+unsigned long long int Factorial(long long int operand)
 {
   unsigned long long int result = operand;
 
