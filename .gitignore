@@ -1,3 +1,6 @@
+# CMake Files
+CMakeFiles
+
 # Qt Creator build folder
 build-Calculator-Desktop*/
 .qmake.stash

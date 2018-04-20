@@ -92,14 +92,4 @@ double standardDeviation(std::vector<double> &numberSequence)
   return SquareRoot(result);
 }
 
-int main()
-{
-  std::vector<double> array1;
-
-  getArray(array1);
-  std::cout << standardDeviation(array1) << std::endl;
-
-  return 0;
-}
-
 /*** end of file standard_deviation.cpp ***/
