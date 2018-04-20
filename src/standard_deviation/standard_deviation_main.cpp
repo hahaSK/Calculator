@@ -8,6 +8,8 @@
 //  standard_deviation_main.cpp created: 2018-Apr-20
 //=================================================
 
+#include <vector>
+#include <iostream>
 #include "standard_deviation.h"
 
 int main()
