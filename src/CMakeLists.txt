@@ -62,7 +62,7 @@ target_link_libraries( ${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets)
 
 ### PROFILING ###
 
-set(RESOURCE_FILES2 standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
+set(RESOURCE_FILES2 standard_deviation/standard_deviation_main.cpp standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
 set(HEADER_FILES2 standard_deviation/standard_deviation.h math_lib/mathematical_library.h)
 
 add_executable(Standard_deviation ${RESOURCE_FILES2} ${HEADER_FILES2})
@@ -79,6 +79,8 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
 ##  INSTALLATION
 ##########################
 
+set(CMAKE_INSTALL_PREFIX ./)
+
 #
 # Tell CMake to install the windows runtime libraries to the programs
 # directory and tell CPack that they belong to the applications component
@@ -86,7 +88,58 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
 set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
 include(InstallRequiredSystemLibraries)
 install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
-        DESTINATION bin
+        DESTINATION bin/
+        COMPONENT applications)
+
+if(WIN32)
+    set(RUNTIME_DLLS
+            dependencies/msvcp140d.dll
+            dependencies/ucrtbased.dll
+            dependencies/vcruntime140d.dll
+            dependencies/Qt5Cored.dll
+            dependencies/Qt5Guid.dll
+            dependencies/Qt5Widgetsd.dll
+            )
+    file(GLOB DLL_FILES ${RUNTIME_DLLS})
+    install(FILES ${DLL_FILES}
+            DESTINATION bin/
+            COMPONENT DLLlib)
+elseif(UNIX)
+    set(SHARED_LIB
+            dependencies/linuxlib/libicudata.so.57
+            dependencies/linuxlib/libicui18n.so.57
+            dependencies/linuxlib/libicuuc.so.57
+            dependencies/linuxlib/libpcre2-16.so.0
+            dependencies/linuxlib/libpng16.so.16
+            dependencies/linuxlib/libQt5Core.so.5
+            dependencies/linuxlib/libQt5Gui.so.5
+            dependencies/linuxlib/libQt5Widgets.so.5
+            dependencies/linuxlib/libz.so.1
+            dependencies/linuxlib/libQt5Core.so.5.9
+            )
+    file(GLOB SHARED_LIB_FILES ${SHARED_LIB})
+    install(FILES ${SHARED_LIB_FILES}
+            DESTINATION bin/dependencies/
+            COMPONENT SharedLib)
+endif(WIN32)
+
+set(PLATFORMS
+        dependencies/platforms/libqxcb.so
+        dependencies/platforms/qwindowsd.dll
+        )
+file(GLOB PLATFORMS_FILES ${PLATFORMS})
+install(FILES ${PLATFORMS_FILES}
+        DESTINATION bin/platforms/
+        COMPONENT SharedLib)
+
+install(TARGETS ${PROJECT_NAME}
+        RUNTIME
+        DESTINATION bin/
+        COMPONENT applications)
+
+install(TARGETS runTests
+        RUNTIME
+        DESTINATION bin/
         COMPONENT applications)
 
 if(WIN32)
@@ -112,13 +165,14 @@ endif(WIN32)
 #install(TARGETS mySharedLib DESTINATION /some/full/path)
 
 ### CPack ###
-set(CPACK_PACKAGE_NAME "CPackExampleInstaller")
-set(CPACK_PACKAGE_VENDOR "Ziv Yaniv")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example showing CPack in action")
-set(CPACK_PACKAGE_VERSION_MAJOR "1")
-set(CPACK_PACKAGE_VERSION_MINOR "0")
-set(CPACK_PACKAGE_VERSION_PATCH "0")
-set(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "CPackExample")
+if(WIN32)
+    set(CPACK_GENERATOR "TARGZ")
+elseif(UNIX)
+    set(CPACK_GENERATOR "WIN32")
+endif(WIN32)
+
+set(CPACK_PACKAGE_NAME "Calculator-ShatteredButWhole")
+set(CPACK_PACKAGE_VENDOR "ShatteredButWhole")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "CpackCalculator")
 
 include(CPack)

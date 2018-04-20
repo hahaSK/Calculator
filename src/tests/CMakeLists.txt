@@ -31,9 +31,6 @@ find_package(Threads REQUIRED)
 
 add_executable(${PROJECT_NAME}
         tests/mathematical_library_tests.cpp
-        tests/standard_deviation_tests.cpp
-        standard_deviation/standard_deviation.cpp
-        standard_deviation/standard_deviation.h
         math_lib/mathematical_library.cpp
         math_lib/mathematical_library.h
         )
@@ -44,3 +41,21 @@ target_link_libraries(${PROJECT_NAME}
         )
 
 add_test(mathematical_library_test ${PROJECT_NAME})
+
+### Standard deviation ###
+
+add_executable(standard_deviation_tests
+        tests/standard_deviation_tests.cpp
+        standard_deviation/standard_deviation.cpp
+        standard_deviation/standard_deviation.h
+        math_lib/mathematical_library.cpp
+        math_lib/mathematical_library.h
+        )
+
+target_link_libraries(standard_deviation_tests
+        gtest
+        gtest_main
+        )
+
+add_test(standard_deviation_tests standard_deviation_tests)
+
