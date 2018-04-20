@@ -40,7 +40,7 @@ target_link_libraries(${PROJECT_NAME}
         gtest_main
         )
 
-add_test(mathematical_library_test ${PROJECT_NAME})
+add_test(NAME mathematical_library_test COMMAND ${PROJECT_NAME} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/${PROJECT_NAME})
 
 ### Standard deviation ###
 
@@ -56,6 +56,3 @@ target_link_libraries(standard_deviation_tests
         gtest
         gtest_main
         )
-
-add_test(standard_deviation_tests standard_deviation_tests)
-

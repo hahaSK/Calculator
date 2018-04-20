@@ -79,7 +79,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
 ##  INSTALLATION
 ##########################
 
-set(CMAKE_INSTALL_PREFIX ./)
+set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
 
 #
 # Tell CMake to install the windows runtime libraries to the programs
@@ -142,33 +142,11 @@ install(TARGETS runTests
         DESTINATION bin/
         COMPONENT applications)
 
-if(WIN32)
-    set(runtime_dlls
-            bin/msvcp140d.dll
-            bin/ucrtbased.dll
-            bin/vcruntime140d.dll
-            bin/Qt5Cored.dll
-            bin/Qt5Guid.dll
-            bin/Qt5Widgetsd.dll)
-endif(WIN32)
-
-if(WIN32)
-    install(TARGETS ${PROJECT_NAME}
-            RUNTIME DESTINATION bin
-            LIBRARY DESTINATION bin
-            ARCHIVE DESTINATION bin/static
-            COMPONENT applications)
-    install(FILES runtime_dlls DESTINATION bin COMPONENT dllLibraries)
-elseif(UNIX)
-
-endif(WIN32)
-#install(TARGETS mySharedLib DESTINATION /some/full/path)
-
 ### CPack ###
 if(WIN32)
-    set(CPACK_GENERATOR "TARGZ")
-elseif(UNIX)
     set(CPACK_GENERATOR "WIN32")
+elseif(UNIX)
+    set(CPACK_GENERATOR "TGZ")
 endif(WIN32)
 
 set(CPACK_PACKAGE_NAME "Calculator-ShatteredButWhole")
