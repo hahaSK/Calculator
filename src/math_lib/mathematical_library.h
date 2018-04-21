@@ -61,7 +61,7 @@ double SquareRoot(double operand);
 * @param operand - number for factorial
 * @return result
 */
-unsigned long long int Factorial(unsigned long long int operand);
+unsigned long long int Factorial(long long int operand);
 
 /**
  * Remainder of the division of leftOperand by rightOperand
