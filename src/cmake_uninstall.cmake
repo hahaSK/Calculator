@@ -10,53 +10,58 @@
 ##===========================================================
 
 IF(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt")
-    MESSAGE(FATAL_ERROR "Cannot find install manifest: "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
+    MESSAGE(FATAL_ERROR "Cannot find install manifest: " ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
 ENDIF(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt")
 
 FILE(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt" files)
 STRING(REGEX REPLACE " " ";" files "${files}")
 FOREACH(file ${files})
-    MESSAGE(STATUS "Uninstalling "${file})
-    IF(EXISTS "${file}")
+    MESSAGE(STATUS "Uninstalling " ${file})
+    IF(EXISTS ${file})
         EXEC_PROGRAM(
-                "${CMAKE_COMMAND}" ARGS "-E remove "${file}
+                "${CMAKE_COMMAND}" ARGS "-E remove " ${file}
                 OUTPUT_VARIABLE rm_out
                 RETURN_VALUE rm_retval
         )
         IF(NOT "${rm_retval}" STREQUAL 0)
-            MESSAGE(FATAL_ERROR "Problem when removing "${file})
+            MESSAGE(FATAL_ERROR "Problem when removing " ${file})
         ENDIF(NOT "${rm_retval}" STREQUAL 0)
-    ELSE(EXISTS "${file}")
-        MESSAGE(STATUS "File "${file}" does not exist.")
-    ENDIF(EXISTS "${file}")
+    ELSE(EXISTS ${file})
+        MESSAGE(STATUS "File " ${file} " does not exist.")
+    ENDIF(EXISTS ${file})
 ENDFOREACH(file)
 
-list(LENGTH files len)
-set(bin_directory 0)
-set(include_directory 0)
-set(lib64_directory 0)
+set(bin_found 0)
+set(include_found 0)
+set(lib64_found 0)
 foreach(file ${files})
-    if(bin_directory EQUAL 0)
+    if(bin_found EQUAL 0)
         STRING(REGEX MATCH "(.*/bin)" bin_directory "${file}")
-        message("${bin_directory}")
-    endif()
-    if(include_directory EQUAL 0)
+        if(NOT ${bin_directory} STREQUAL 0)
+            set(bin_found 1)
+        endif(NOT ${bin_directory} STREQUAL 0)
+    endif(bin_found EQUAL 0)
+    if(include_found EQUAL 0)
         STRING(REGEX MATCH "(.*/include)" include_directory "${file}")
-        message("${include_directory}")
-    endif()
-    if(lib64_directory EQUAL 0)
+        if(NOT ${include_directory} STREQUAL 0)
+            set(include_found 1)
+        endif(NOT ${include_directory} STREQUAL 0)
+    endif(include_found EQUAL 0)
+    if(lib64_found EQUAL 0)
         STRING(REGEX MATCH "(.*/lib64)" lib64_directory "${file}")
-        message("${lib64_directory}")
-    endif()
+        if(NOT ${lib64_directory} STREQUAL 0)
+            set(lib64_found 1)
+        endif(NOT ${lib64_directory} STREQUAL 0)
+    endif(lib64_found EQUAL 0)
 endforeach(file)
 
-EXEC_PROGRAM(
-        "${CMAKE_COMMAND}" ARGS "-E remove_directory "${bin_directory}
-        OUTPUT_VARIABLE rm_out
-        RETURN_VALUE rm_retval
-)
+MESSAGE(STATUS "Removing " ${lib64_directory})
+file(REMOVE ${lib64_directory})
+
 
 file(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
+
+MESSAGE(STATUS "Cleaning...")
 
 EXECUTE_PROCESS(
         COMMAND make clean

@@ -139,17 +139,16 @@ install(FILES ${PLATFORMS_FILES}
 install(TARGETS ${PROJECT_NAME}
         RUNTIME
         DESTINATION bin/
-        COMPONENT applications)
+        COMPONENT applications
+        PERMISSIONS OWNER_EXECUTE)
 
 install(TARGETS runTests
         RUNTIME
         DESTINATION bin/
-        COMPONENT applications)
+        COMPONENT applications
+        PERMISSIONS OWNER_EXECUTE)
 
 ########### Add uninstall target ###############
-CONFIGURE_FILE(
-        "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake"
-        IMMEDIATE @ONLY)
 ADD_CUSTOM_TARGET(uninstall
         "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake")
 
