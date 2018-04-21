@@ -10,7 +10,8 @@
 ##===========================================================
 
 IF(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt")
-    MESSAGE(FATAL_ERROR "Cannot find install manifest: " ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
+    MESSAGE(FATAL_ERROR "Cannot find install manifest: " ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt
+            " Probably not installed. Try make install.")
 ENDIF(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt")
 
 FILE(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt" files)
@@ -56,7 +57,13 @@ foreach(file ${files})
 endforeach(file)
 
 MESSAGE(STATUS "Removing " ${lib64_directory})
-file(REMOVE ${lib64_directory})
+file(REMOVE_RECURSE ${lib64_directory}/)
+
+MESSAGE(STATUS "Removing " ${include_directory})
+file(REMOVE_RECURSE ${include_directory}/)
+
+MESSAGE(STATUS "Removing " ${bin_directory})
+file(REMOVE_RECURSE ${bin_directory}/)
 
 
 file(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
