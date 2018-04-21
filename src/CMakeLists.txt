@@ -60,6 +60,10 @@ endif(UNIX)
 # build it (link libraries)
 target_link_libraries( ${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets)
 
+set(CMAKE_AUTOMOC OFF)
+set(CMAKE_AUTOUIC OFF)
+set(CMAKE_AUTORCC OFF)
+
 ### PROFILING ###
 
 set(RESOURCE_FILES2 standard_deviation/standard_deviation_main.cpp standard_deviation/standard_deviation.cpp math_lib/mathematical_library.cpp)
@@ -141,6 +145,13 @@ install(TARGETS runTests
         RUNTIME
         DESTINATION bin/
         COMPONENT applications)
+
+########### Add uninstall target ###############
+CONFIGURE_FILE(
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake"
+        IMMEDIATE @ONLY)
+ADD_CUSTOM_TARGET(uninstall
+        "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake")
 
 ### CPack ###
 if(WIN32)
