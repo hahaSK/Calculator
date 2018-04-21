@@ -1,3 +1,14 @@
+//=====================ShatteredButWhole=====================
+//              IVS project 2 - Calculator
+//
+//  Authors: Juraj Lahvièka <xlahvi00@vutbr.cz>
+//           Lubomír Švehla <xsvehl09@stud.fit.vutbr.cz>
+//           Tomáš Sasák    <xsasak01@stud.fit.vutbr.cz>
+//           Martin Krajèí  <xkrajc21@stud.fit.vutbr.cz>
+//
+//  
+//===========================================================
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

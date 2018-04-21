@@ -1,10 +1,25 @@
+//=====================ShatteredButWhole=====================
+//              IVS project 2 - Calculator
+//
+//  Authors: Juraj Lahvièka <xlahvi00@vutbr.cz>
+//           Lubomír Švehla <xsvehl09@stud.fit.vutbr.cz>
+//           Tomáš Sasák    <xsasak01@stud.fit.vutbr.cz>
+//           Martin Krajèí  <xkrajc21@stud.fit.vutbr.cz>
+//
+//  
+//===========================================================
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "math_lib/mathematical_library.h"
 
-bool addClicked, subClicked, divClicked, mulClicked, powClicked, sqrtClicked, facClicked, modClicked = false, exception = false;
-double leftNum, rightNum = 0;
+bool addClicked, subClicked, divClicked, mulClicked, powClicked, sqrtClicked, facClicked, modClicked, exception = false; /** @brief Bool declarations for parser. */
+double leftNum, rightNum = 0; /** @brief Double declaration of leftNum and rightNum in calculator. */
 
+/**
+ * @brief Function for main window which showsup when calculator is launched.
+ * Function launches window for calculator with fixed size of 401x263px.
+ */
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::MainWindow)
@@ -12,62 +27,110 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->setupUi(this);
 	setFixedSize(401, 263);
 }
-
+/**
+ * @brief Destructor of main window.
+ * Destructor is called when X icon is pressed. Function removes the ui and terminates calculator.
+ */
 MainWindow::~MainWindow()
 {
 	delete ui;
 }
 
+/**
+ * @brief Function for button '0' in calculator.
+ * This button in state 'clicked' appends number '0' at the end of label 'labInput' which is used for user input.
+ */
 void MainWindow::on_pshbtn0_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('0'));
 }
 
+/**
+* @brief Function for button '1' in calculator.
+* This button in state 'clicked' appends number '1' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn1_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('1'));
 }
 
+/**
+* @brief Function for button '2' in calculator.
+* This button in state 'clicked' appends number '2' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn2_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('2'));
 }
 
+/**
+* @brief Function for button '3' in calculator.
+* This button in state 'clicked' appends number '3' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn3_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('3'));
 }
 
+/**
+* @brief Function for button '4' in calculator.
+* This button in state 'clicked' appends number '4' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn4_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('4'));
 }
 
+/**
+* @brief Function for button '5' in calculator.
+* This button in state 'clicked' appends number '5' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn5_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('5'));
 }
 
+/**
+* @brief Function for button '6' in calculator.
+* This button in state 'clicked' appends number '6' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn6_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('6'));
 }
 
+/**
+* @brief Function for button '7' in calculator.
+* This button in state 'clicked' appends number '7' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn7_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('7'));
 }
 
+/**
+* @brief Function for button '8' in calculator.
+* This button in state 'clicked' appends number '8' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn8_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('8'));
 }
 
+/**
+* @brief Function for button '9' in calculator.
+* This button in state 'clicked' appends number '9' at the end of label 'labInput' which is used for user input.
+*/
 void MainWindow::on_pshbtn9_clicked()
 {
 	ui->labInput->setText(ui->labInput->text().append('9'));
 }
 
+/**
+ * @brief Function for button '.' (decimal point) in calculator.
+ * This button in state 'clicked' appends decimal point '.' at the end of label 'labInput' which is used for user input.
+ * Function tests at the beginning, if the decimal point is included already in the number, so user cannot append more than one decimal point. 
+ */
 void MainWindow::on_pshbtnComma_clicked()
 {
 	QString test;
@@ -79,6 +142,13 @@ void MainWindow::on_pshbtnComma_clicked()
 	}
 }
 
+/**
+ * @brief Function for button '+' (add) in calculator.
+ * This button in state 'clicked' changes #addClicked to true for parser.
+ * Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+ * If no other mathematical operation bool was not set to true before, function changes #addClicked to true for parser and loads first number to the variable #leftNum,
+ * clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+ */
 void MainWindow::on_pshbtnAdditiveOperator_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -97,6 +167,14 @@ void MainWindow::on_pshbtnAdditiveOperator_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append('+')); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '-' (sub) in calculator.
+* This button in state 'clicked' changes #subClicked to true for parser.
+* Function works in two modes, one mode appends minus sign '-' at the label 'labInput' if the label is empty. The second mode works as initialization of mathematical operation substraction.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #subClicked to true for parser and loads first number to the variable #leftNum,
+* clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnSubstractiveOperator_clicked()
 {
     if (ui->labInput->text() == NULL) // Check if label is empty
@@ -121,6 +199,13 @@ void MainWindow::on_pshbtnSubstractiveOperator_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append('-')); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '*' (multiply) in calculator.
+* This button in state 'clicked' changes #mulClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #mulClicked to true for parser and loads first number to the variable #leftNum,
+* clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnMultiplicativeOperator_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -139,6 +224,13 @@ void MainWindow::on_pshbtnMultiplicativeOperator_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append('*')); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '/' (divide) in calculator.
+* This button in state 'clicked' changes #divClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #divClicked to true for parser and loads first number to the variable #leftNum,
+* clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnDivideOperator_clicked() 
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -156,6 +248,13 @@ void MainWindow::on_pshbtnDivideOperator_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append('/')); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '^' (power) in calculator.
+* This button in state 'clicked' changes #powClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #powClicked to true for parser and loads first number to the variable #leftNum,
+* clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnPowerOperator_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -174,6 +273,13 @@ void MainWindow::on_pshbtnPowerOperator_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append('^')); // Setting proper operation.
 }
 
+/**
+* @brief Function for button 'sqrt' (square root) in calculator.
+* This button in state 'clicked' changes #sqrtClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #sqrtClicked to true for parser and loads first number to the variable #leftNum
+* and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnSQRT_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -184,12 +290,17 @@ void MainWindow::on_pshbtnSQRT_clicked()
 
 	sqrtClicked = true; // Bool for parser.
 
-    //ui->labInput->clear(); // Clearing the input window for second input.
-
 	ui->labOperator->clear(); // Clearing the Operator label, to show proper operation.
 	ui->labOperator->setText(ui->labOperator->text().append("sqrt")); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '!' (factorial) in calculator.
+* This button in state 'clicked' changes #facClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #facClicked to true for parser and loads first number to the variable #leftNum,
+* and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnFactorial_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -204,6 +315,13 @@ void MainWindow::on_pshbtnFactorial_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append("!")); // Setting proper operation.   
 }
 
+/**
+* @brief Function for button 'MOD' (modulo) in calculator.
+* This button in state 'clicked' changes #modClicked to true for parser.
+* Function first checks if some of the other bools were pressed before, if some mathematical operation was pressed already, that operation needs to finish first.
+* If no other mathematical operation bool was not set to true before, function changes #modClicked to true for parser and loads first number to the variable #leftNum,
+* clears the input label 'labInput' to set up for second input and shows up the mathematical operation sign in label 'labOperator'.
+*/
 void MainWindow::on_pshbtnModulo_clicked()
 {
 	if (addClicked || subClicked || mulClicked || divClicked || sqrtClicked || facClicked || modClicked) // Checks if some operation was already clicked before, to finish that one first.
@@ -222,12 +340,21 @@ void MainWindow::on_pshbtnModulo_clicked()
 	ui->labOperator->setText(ui->labOperator->text().append("mod")); // Setting proper operation.
 }
 
+/**
+* @brief Function for button '=' (calculate) in calculator, which calculates the input and shows output.
+* This button in state 'clicked' calculates the input #leftNum and #rightNum and shows it up in label 'labInput'.
+* Function defines double #result for storing result, removes the text in label #labOperator and saves the second input of user in #rightNum.
+* After that, function checks which bool is set to true, that mathematical operation is going to happen. Result of stored in result and after that
+* formated from the c++ double to QString text. Also, the input is showed in the label #labOperator, so user can know, which numbers and operations,
+* he put in. If users input is invalid, exception is catched and showed in the label #labInput and the all buttons except 'CE' are blocked. So user needs
+* to press the 'CE' to restart everything.
+*/
 void MainWindow::on_pshbtnCalculate_clicked()
 {
     try
     {
-        QString labResult; // Declarationg of Qt result string.
-        double result = 0; // Declaration of result from mathematical library.
+        QString labResult; /** @brief Declarationg of Qt result string. */
+        double result = 0; /** @brief Double declaration of result where result is stored in. */
 
         ui->labOperator->clear(); // Removing the Label containg operation. (Not needed anymore)
         rightNum = ui->labInput->text().toDouble(); // Getting second input number.
@@ -335,6 +462,11 @@ void MainWindow::on_pshbtnCalculate_clicked()
     }
 }
 
+/**
+ * @brief Function for button 'C' (delete), function removes one number.
+ * This button on state 'clicked' removes one character from QString #string.
+ * Function takes current number and stores it in string, decrements length by one and returns it in #labInput.
+ */
 void MainWindow::on_pshbtnDelete_clicked()
 {
     if (exception == true)
@@ -347,6 +479,11 @@ void MainWindow::on_pshbtnDelete_clicked()
 	ui->labInput->setText(string); // And returns it back.
 }
 
+/**
+ * @brief Funtion for button 'CE' (clear), function clears everything.
+ * This button on state 'clicked' removes everything from #labInput #laboperator. Restores #rightNum and #leftNum to 0.
+ * Also sets all mathematical operation bools to false and enables or disables the other button when exception happens.
+ */
 void MainWindow::on_pshbtnClear_clicked()
 {
 	ui->labInput->clear(); // Removing the numbers from label.
@@ -360,6 +497,12 @@ void MainWindow::on_pshbtnClear_clicked()
     disableOrEnableButtonsOnException(exception = false); // Set exception to false and enable or disable buttons
 }
 
+/**
+ * @brief Function disables or enables buttons when exception happens.
+ * @param exception Indicates if exception happened.
+ * If exception happened, disables all buttons except 'CE' and 'C'-
+ * On oposite, enables all buttons.
+ */
 void MainWindow::disableOrEnableButtonsOnException(bool exception)
 {
     if (exception == true)
