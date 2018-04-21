@@ -39,6 +39,9 @@ GUI
 !Qt5Cored.dll
 !Qt5Guid.dll
 !Qt5Widgetsd.dll
+!msvcp140d.dll
+!ucrtbased.dll
+!vcruntime140d.dll
 
 !libqxcb.so
 
