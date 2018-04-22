@@ -1,13 +1,19 @@
 //=====================ShatteredButWhole=====================
 //              IVS project 2 - Calculator
 //
-//  Authors: Juraj LahviËka <xlahvi00@vutbr.cz>
-//           LubomÌr ävehla <xsvehl09@stud.fit.vutbr.cz>
-//           Tom·ö Sas·k    <xsasak01@stud.fit.vutbr.cz>
-//           Martin KrajËÌ  <xkrajc21@stud.fit.vutbr.cz>
+//  Authors: Juraj Lahviƒçka <xlahvi00@vutbr.cz>
+//           Lubom√≠r ≈†vehla <xsvehl09@stud.fit.vutbr.cz>
+//           Tom√°≈° Sas√°k    <xsasak01@stud.fit.vutbr.cz>
+//           Martin Krajƒç√≠  <xkrajc21@stud.fit.vutbr.cz>
 //
 //  
 //===========================================================
+
+/**
+ * @file mainwindow.h
+ * @author Juraj Lahvicka
+ * @brief Contains declarations of functions from mainwindow.cpp
+ */
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -75,10 +81,12 @@ private:
     Ui::MainWindow *ui;
 
     /**
-     * Disable or enable buttons when exception is thrown
-     * @param exception - is exception ?
+     * @brief Disable or enable buttons when exception is thrown
+     * @param exception is exception ?
      */
     void disableOrEnableButtonsOnException(bool exception);
 };
 
 #endif // MAINWINDOW_H
+
+/*** end of file mainwindow.h ***/

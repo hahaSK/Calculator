@@ -10,25 +10,31 @@
 //===========================================================
 
 /**
+ * @file mathematical_library.h
+ * @authors Juraj Lahvicka, Lubomir Svehla, Tomas Sasak, Martin Krajci
+ * @brief Contains declarations of functions from mathematical_library.cpp
+ */
+
+/**
 * Add two numbers
-* @param leftOperand - augend
-* @param rightOperand - addend
+* @param leftOperand addend
+* @param rightOperand addend
 * @return result
 */
 double Add(double leftOperand, double rightOperand);
 
 /**
  * Subtract two numbers
- * @param leftOperand - minuend
- * @param rightOperand - subtrahend
+ * @param leftOperand minuend
+ * @param rightOperand subtrahend
  * @return result
  */
 double Subtract(double leftOperand, double rightOperand);
 
 /**
  * Multiply two numbers
- * @param leftOperand - multiplicand
- * @param rightOperand - multiplier
+ * @param leftOperand multiplicand
+ * @param rightOperand multiplier
  * @return result
  */
 double Multiply(double leftOperand, double rightOperand);
@@ -43,8 +49,8 @@ double Divide(double leftOperand, double rightOperand);
 
 /**
  * Natural power of number
- * @param leftOperand - number
- * @param rightOperand - power
+ * @param leftOperand number
+ * @param rightOperand power
  * @return result
  */
 double Power(double leftOperand, long long int rightOperand);
@@ -58,15 +64,17 @@ double SquareRoot(double operand);
 
 /**
 * Make factorial of number
-* @param operand - number for factorial
+* @param operand number for factorial
 * @return result
 */
 unsigned long long int Factorial(long long int operand);
 
 /**
  * Remainder of the division of leftOperand by rightOperand
- * @param leftOperand - dividend
- * @param rightOperand - divisor
+ * @param leftOperand dividend
+ * @param rightOperand divisor
  * @return result
  */
 int Modulo(long long int leftOperand, long long int rightOperand);
+
+/*** end of file mathematical_library.h ***/

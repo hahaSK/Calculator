@@ -1,13 +1,19 @@
 //=====================ShatteredButWhole=====================
 //              IVS project 2 - Calculator
 //
-//  Authors: Juraj Lahvièka <xlahvi00@vutbr.cz>
-//           Lubomír Švehla <xsvehl09@stud.fit.vutbr.cz>
-//           Tomáš Sasák    <xsasak01@stud.fit.vutbr.cz>
-//           Martin Krajèí  <xkrajc21@stud.fit.vutbr.cz>
+//  Authors: Juraj LahviÄka <xlahvi00@vutbr.cz>
+//           LubomÃ­r Å vehla <xsvehl09@stud.fit.vutbr.cz>
+//           TomÃ¡Å¡ SasÃ¡k    <xsasak01@stud.fit.vutbr.cz>
+//           Martin KrajÄÃ­  <xkrajc21@stud.fit.vutbr.cz>
 //
 //  
 //===========================================================
+
+/**
+ * @file mainwindow.cpp
+ * @author Juraj Lahvicka
+ * @brief Creates GUI for the calculator
+ */
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -18,6 +24,7 @@ double leftNum, rightNum = 0; /** @brief Double declaration of leftNum and right
 
 /**
  * @brief Function for main window which showsup when calculator is launched.
+ *
  * Function launches window for calculator with fixed size of 401x263px.
  */
 MainWindow::MainWindow(QWidget *parent) :
@@ -559,3 +566,5 @@ void MainWindow::disableOrEnableButtonsOnException(bool exception)
         ui->pshbtnSubstractiveOperator->setEnabled(true);
         }
 }
+
+/*** end of file mainwindow.cpp ***/
