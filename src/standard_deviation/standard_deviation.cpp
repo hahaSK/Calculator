@@ -11,7 +11,7 @@
 /**
  * @file standard_deviation.cpp
  * @author Lubomir Svehla
- * @brief Reads set of values from standard input and computes standard deviation from them
+ * @brief Contains set of functions to get sequence of numbers and to compute standard deviation
  */
 
 #include <array>
@@ -90,16 +90,6 @@ double standardDeviation(std::vector<double> &numberSequence)
   result = Subtract(sumContent, Multiply(numberSequence.size(), Power(averageValue, 2)));
   result = Divide(result, Subtract(numberSequence.size(), 1));
   return SquareRoot(result);
-}
-
-int main()
-{
-  std::vector<double> array1;
-
-  getArray(array1);
-  std::cout << standardDeviation(array1) << std::endl;
-
-  return 0;
 }
 
 /*** end of file standard_deviation.cpp ***/
