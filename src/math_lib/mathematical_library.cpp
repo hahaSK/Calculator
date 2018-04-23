@@ -9,6 +9,12 @@
 //  mathematical_library.cpp created: 2018-Mar-09
 //===========================================================
 
+/**
+ * @file mathematical_library.cpp
+ * @authors Juraj Lahvicka, Lubomir Svehla, Tomas Sasak, Martin Krajci
+ * @brief Contains functions for computing mathematical operations
+ */
+
 #include "mathematical_library.h"
 #include <stdexcept>
 
@@ -53,7 +59,7 @@ double Power(double leftOperand, long long int rightOperand)
   return result;
 }
 
-unsigned long long int Factorial(unsigned long long int operand)
+unsigned long long int Factorial(long long int operand)
 {
   unsigned long long int result = operand;
 
@@ -136,3 +142,5 @@ double SquareRoot(double operand)
   }
   return mid;
 }
+
+/*** end of file mathematical_library.cpp ***/
