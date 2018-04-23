@@ -187,7 +187,11 @@ set(DEPLOY_CLEAN
         *.cbp
         _CPack_Packages
         bin
-        Makefile)
+        Makefile
+        .vs
+        .idea
+        latex
+        html)
 
 ADD_CUSTOM_TARGET(deployclean @echo cleaning for source distribution)
 
