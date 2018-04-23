@@ -35,6 +35,7 @@ ENDFOREACH(file)
 set(bin_found 0)
 set(include_found 0)
 set(lib64_found 0)
+set(lib_found 0)
 foreach(file ${files})
     if(bin_found EQUAL 0)
         STRING(REGEX MATCH "(.*/bin)" bin_directory "${file}")
@@ -49,21 +50,36 @@ foreach(file ${files})
         endif(NOT ${include_directory} STREQUAL 0)
     endif(include_found EQUAL 0)
     if(lib64_found EQUAL 0)
+        #STRING(REGEX MATCH "(.*/lib[0-9]?[0-9]?)/.*$" lib64_directory "${file}")
         STRING(REGEX MATCH "(.*/lib64)" lib64_directory "${file}")
         if(NOT ${lib64_directory} STREQUAL 0)
             set(lib64_found 1)
         endif(NOT ${lib64_directory} STREQUAL 0)
     endif(lib64_found EQUAL 0)
+    if(lib_found EQUAL 0)
+        STRING(REGEX MATCH "(.*/lib)" lib_directory "${file}")
+        if(NOT ${lib_directory} STREQUAL 0)
+            set(lib_found 1)
+        endif(NOT ${lib_directory} STREQUAL 0)
+    endif(lib_found EQUAL 0)
 endforeach(file)
 
-MESSAGE(STATUS "Removing " ${lib64_directory})
-file(REMOVE_RECURSE ${lib64_directory}/)
+if(lib_found EQUAL 1)
+    MESSAGE(STATUS "Removing " ${lib_directory})
+    file(REMOVE_RECURSE ${lib_directory}/)
+endif(lib_found EQUAL 1)
+
+if(lib64_found EQUAL 1)
+    MESSAGE(STATUS "Removing " ${lib64_directory})
+    file(REMOVE_RECURSE ${lib64_directory}/)
+endif(lib64_found EQUAL 1)
+
 
 MESSAGE(STATUS "Removing " ${include_directory})
 file(REMOVE_RECURSE ${include_directory}/)
 
-MESSAGE(STATUS "Removing " ${bin_directory})
-file(REMOVE_RECURSE ${bin_directory}/)
+#MESSAGE(STATUS "Removing " ${bin_directory})
+#file(REMOVE_RECURSE ${bin_directory}/)
 
 
 file(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/install_manifest.txt)
@@ -74,3 +90,8 @@ EXECUTE_PROCESS(
         COMMAND make clean
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
+
+#EXECUTE_PROCESS(
+ #       COMMAND make deployclean
+  #      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#)
