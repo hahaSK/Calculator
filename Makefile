@@ -8,9 +8,10 @@ uninstall:
 
 install_prerequisities:
 ifeq ($(OS), Windows_NT)
-        @echo "These prerequisities are not valid for Windows"
+	@echo "These prerequisities are not valid for Windows"
 else
 	sudo apt-get install cmake build-essential libgl1-mesa-dev qtdeclarative5-dev
+endif
 
 clean:
 ifeq (,$(wildcard ./src/install_manifest.txt))

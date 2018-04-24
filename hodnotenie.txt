@@ -1,4 +1,4 @@
 xlahvi00 100 (výpomoc pri GUI, inštalátor, testy pre faktoriál a sèítanie, matematické operácie odèítanie a mocniny)
-xsvehl09 100 (profiling, testy pre modulo, delenie a druhú odmocninu, matematické operácie modulo a násobenie)
+xsvehl09 100 (profiling, dokumentácia, testy pre modulo, delenie a druhú odmocninu, matematické operácie modulo a násobenie)
 xsasak02 100 (GUI, testy pre odèítanie a modulo, matematické operácie delenie a druhá odmocnina)
 xkrajc21 100 (dokumentácia, testy pre násobenie, matematické operácie faktoriá a sèítanie)

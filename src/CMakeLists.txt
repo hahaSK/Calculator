@@ -1,4 +1,4 @@
-##=====================ShatteredButWhole=====================
+﻿##=====================ShatteredButWhole=====================
 ##              IVS project 2 - Calculator
 ##
 ##  Authors: Juraj Lahvička <xlahvi00@vutbr.cz>
@@ -114,23 +114,6 @@ if(WIN32)
     install(FILES ${DLL_FILES}
             DESTINATION bin/
             COMPONENT DLLlib)
-elseif(UNIX)
-    set(SHARED_LIB
-            dependencies/linuxlib/libicudata.so.57
-            dependencies/linuxlib/libicui18n.so.57
-            dependencies/linuxlib/libicuuc.so.57
-            dependencies/linuxlib/libpcre2-16.so.0
-            dependencies/linuxlib/libpng16.so.16
-            dependencies/linuxlib/libQt5Core.so.5
-            dependencies/linuxlib/libQt5Gui.so.5
-            dependencies/linuxlib/libQt5Widgets.so.5
-            dependencies/linuxlib/libz.so.1
-            dependencies/linuxlib/libQt5Core.so.5.9
-            )
-    file(GLOB SHARED_LIB_FILES ${SHARED_LIB})
-    install(FILES ${SHARED_LIB_FILES}
-            DESTINATION bin/dependencies/
-            COMPONENT SharedLib)
 endif(WIN32)
 
 set(PLATFORMS
