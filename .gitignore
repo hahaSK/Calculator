@@ -1,3 +1,6 @@
+# CMake Files
+CMakeFiles
+
 # Qt Creator build folder
 build-Calculator-Desktop*/
 .qmake.stash
@@ -38,6 +41,9 @@ src/latex
 !Qt5Cored.dll
 !Qt5Guid.dll
 !Qt5Widgetsd.dll
+!msvcp140d.dll
+!ucrtbased.dll
+!vcruntime140d.dll
 
 !libqxcb.so
 

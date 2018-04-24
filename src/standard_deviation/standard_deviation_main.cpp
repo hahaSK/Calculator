@@ -8,6 +8,7 @@
 //  standard_deviation_main.cpp created: 2018-Apr-20
 //=================================================
 
+
 /**
  * @file standard_deviation_main.cpp
  * @author Lubomir Svehla
