@@ -2,7 +2,7 @@
 VUT FIT IVS project 2 - Calculator
 Team: ShatteredButWhole
 
-**Platforms** 
+**Platforms** <br />
 _Windows 64-bit_  
 _Ubuntu 64-bit_  
 
