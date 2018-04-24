@@ -39,7 +39,7 @@ pack:
 ifeq ($(OS), Windows_NT)
 	@echo You need to pack manually on Windows
 else
-	cd .. && zip -r Calculator/Calculator.zip Calculator
+	cd .. && zip -r Calculator/xlahvi00_xsvehl09_xsasak01_xkrajc21.zip Calculator
 endif
 	
 doc: 

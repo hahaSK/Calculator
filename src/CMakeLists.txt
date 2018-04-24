@@ -142,7 +142,7 @@ install(FILES ${PLATFORMS_FILES}
         DESTINATION bin/platforms/
         COMPONENT SharedLib)
 
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS Calculator
         RUNTIME DESTINATION bin/
         COMPONENT applications
         PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
