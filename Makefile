@@ -36,7 +36,15 @@ else
 endif
 
 pack:
+ifeq ($(OS), Windows_NT)
+	@echo You need to pack manually on Windows
+else
 	cd .. && zip -r Calculator/Calculator.zip Calculator
+endif
 	
 doc: 
+ifeq ($(OS), Windows_NT)
+	@echo Doxygen is not supported on Windows
+else
 	$(CHDIR_TO_SRC) && doxygen Doxyfile
+endif
