@@ -185,12 +185,15 @@ set(DEPLOY_CLEAN
         CMakeFiles
         cmake-build-debug
         *.cbp
+        *.ilk
         _CPack_Packages
         bin
         Makefile
         .vs
         .idea
         latex
+        ../.vs
+        ../.idea
         html)
 
 ADD_CUSTOM_TARGET(deployclean @echo cleaning for source distribution)
