@@ -8,6 +8,8 @@ Calculator.pro*
 Calculator.vcxproj*
 # remove GUI folder, merging to master
 GUI
+src/html
+src/latex
 
 # Visual studio folders and files
 *.vs

@@ -8,6 +8,13 @@
 //  standard_deviation_main.cpp created: 2018-Apr-20
 //=================================================
 
+
+/**
+ * @file standard_deviation_main.cpp
+ * @author Lubomir Svehla
+ * @brief Reads set of values from standard input and computes standard deviation from them
+ */
+
 #include <vector>
 #include <iostream>
 #include "standard_deviation.h"
@@ -21,3 +28,5 @@ int main()
 
   return 0;
 }
+
+/*** end of file standard_deviation_main.cpp ***/
