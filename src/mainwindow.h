@@ -11,7 +11,7 @@
 
 /**
  * @file mainwindow.h
- * @author Juraj Lahvicka
+ * @author Juraj Lahvicka, Tomas Sasak
  * @brief Contains declarations of functions from mainwindow.cpp
  */
 

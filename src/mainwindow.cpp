@@ -11,7 +11,7 @@
 
 /**
  * @file mainwindow.cpp
- * @author Juraj Lahvicka
+ * @authors Juraj Lahvicka, Tomas Sasak
  * @brief Creates GUI for the calculator
  */
 

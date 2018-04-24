@@ -9,8 +9,10 @@ _Ubuntu 64-bit_
 ### Prerequisites
 * [make](https://www.gnu.org/software/make/)
 * [CMake](https://cmake.org/)
-##### _Additional prerequisites for linux_
-* [Qt](http://doc.qt.io/qt-5/linux.html)
+##### _Additional prerequisites for Ubuntu_
+* [Qt5](http://doc.qt.io/qt-5/linux.html)
+* sudo apt-get install qtbase5-dev
+* sudo apt-get install qtdeclarative5-dev
 
 ## Getting Started
 Use this commands for top-level Makefile (for Windows see additional informations !):  
