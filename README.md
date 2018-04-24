@@ -24,6 +24,7 @@ Use this commands for top-level Makefile (for Windows see additional information
 ```make pack``` - zip the whole directory  
 ```make run``` - start the Calculator application <br />
 ```make doc``` - create doxygen documentation
+```make install_prerequisities``` - install required prerequisities <br />
 
 ### Additional informations
 [CMake](https://cmake.org/) minimal version 2.8.11 required.
