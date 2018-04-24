@@ -1,4 +1,3 @@
-
 CHDIR_TO_SRC=cd ./src/
 
 all:
@@ -6,6 +5,12 @@ all:
 
 uninstall:	
 	$(CHDIR_TO_SRC) && make uninstall && rm -r _CPack_Packages 
+
+install_prerequisities:
+ifeq ($(OS), Windows_NT)
+        @echo "These prerequisities are not valid for Windows"
+else
+	sudo apt-get install cmake build-essential libgl1-mesa-dev qtdeclarative5-dev
 
 clean:
 ifeq (,$(wildcard ./src/install_manifest.txt))
@@ -22,14 +27,14 @@ else
 endif
 
 test:
-ifeq (,$(wildcard ./runTests))
+ifeq (,$(wildcard ./src/bin/runTests))
 	@echo "ERROR: runTests binary does not exist.\nPlease build the binary using \"make all\" command."
 else
 	$(CHDIR_TO_SRC)bin/ && ./runTests
 endif
 
 run:
-ifeq (,$(wildcard ./Calculator))
+ifeq (,$(wildcard ./src/bin/Calculator))
 	@echo "ERROR: Calculator binary does not exist.\nPlease build the binary using \"make all\" command."
 else
 	$(CHDIR_TO_SRC)bin/ && ./Calculator
