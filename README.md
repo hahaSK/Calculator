@@ -12,13 +12,13 @@ Team: ShatteredButWhole
 
 ## Getting Started
 Use this commands for top-level Makefile (for Windows see additional informations !):
-```make all``` - install the application
-```make uninstall``` - unistall the application
-```make clean``` - remove unwanted files. Ready for deployment
-```make package``` - create package for distribution 
-```make test``` - run tests of mathematical library
-```make pack``` - zip the whole directory
-```make run``` - start the Calculator application
+```make all``` - install the application <br />
+```make uninstall``` - unistall the application <br />
+```make clean``` - remove unwanted files. Ready for deployment <br />
+```make package``` - create package for distribution <br />
+```make test``` - run tests of mathematical library <br />
+```make pack``` - zip the whole directory  
+```make run``` - start the Calculator application <br />
 ```make doc``` - create doxygen documentation
 
 ### Additional informations
@@ -29,9 +29,9 @@ Used generators for package:
 * _for linux_ -   *ZIP, TGZ*
 
 ## Authors
-**Juraj Lahvička** 	xlahvi00 - (https://github.com/hahaSK)
-**Tomáš Sašák** 	xsasak01
-**Lubomír Švehla** 	xsvehl09
-**Martin Krajčí** 	xkrajc21
+* **Juraj Lahvička** 	xlahvi00 - (https://github.com/hahaSK)
+* **Tomáš Sašák** 	xsasak01
+* **Lubomír Švehla** 	xsvehl09
+* **Martin Krajčí** 	xkrajc21
 	
  
