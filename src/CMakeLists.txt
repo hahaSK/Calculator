@@ -142,7 +142,7 @@ install(FILES ${PLATFORMS_FILES}
         DESTINATION bin/platforms/
         COMPONENT SharedLib)
 
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS Calculator
         RUNTIME DESTINATION bin/
         COMPONENT applications
         PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
@@ -185,12 +185,15 @@ set(DEPLOY_CLEAN
         CMakeFiles
         cmake-build-debug
         *.cbp
+        *.ilk
         _CPack_Packages
         bin
         Makefile
         .vs
         .idea
         latex
+        ../.vs
+        ../.idea
         html)
 
 ADD_CUSTOM_TARGET(deployclean @echo cleaning for source distribution)

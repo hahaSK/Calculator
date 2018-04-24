@@ -2,7 +2,9 @@
 VUT FIT IVS project 2 - Calculator
 Team: ShatteredButWhole
 
-*Platforms Windows 64-bit, Linux*
+**Platforms** <br />
+_Windows 64-bit_  
+_Ubuntu 64-bit_  
 
 ### Prerequisites
 * [make](https://www.gnu.org/software/make/)
@@ -33,5 +35,9 @@ Used generators for package:
 * **Tomáš Sašák** 	xsasak01
 * **Lubomír Švehla** 	xsvehl09
 * **Martin Krajčí** 	xkrajc21
+
+## License
+
+This project is licensed under the GNU GPL License - see the [LICENSE.md](LICENSE.md) file for details 
 	
  

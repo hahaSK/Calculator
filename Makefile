@@ -9,16 +9,16 @@ uninstall:
 
 clean:
 ifeq (,$(wildcard ./src/install_manifest.txt))
-	$(CHDIR_TO_SRC) && make uninstall && make deployclean
-else
 	$(CHDIR_TO_SRC) && make clean && make deployclean
+else
+	$(CHDIR_TO_SRC) && make uninstall && make deployclean
 endif
 
 package:
 ifeq (,$(wildcard ./src/install_manifest.txt))
-	$(CHDIR_TO_SRC) && make uninstall && make package
-else
 	$(CHDIR_TO_SRC) && make package
+else
+	$(CHDIR_TO_SRC) && make uninstall && make package
 endif
 
 test:
@@ -37,14 +37,14 @@ endif
 
 pack:
 ifeq ($(OS), Windows_NT)
-	@echo You need to pack manually on Windows
+	@echo "You need to pack manually on Windows"
 else
-	cd .. && zip -r Calculator/Calculator.zip Calculator
+	cp ./src/install ../install && cd .. && zip -r xlahvi00_xsvehl09_xsasak01_xkrajc21.zip Calculator doc install
 endif
 	
 doc: 
 ifeq ($(OS), Windows_NT)
-	@echo Doxygen is not supported on Windows
+	@echo "Doxygen is not supported on Windows"
 else
 	$(CHDIR_TO_SRC) && doxygen Doxyfile
 endif
