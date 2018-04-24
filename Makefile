@@ -45,7 +45,7 @@ pack:
 ifeq ($(OS), Windows_NT)
 	@echo "You need to pack manually on Windows"
 else
-	cp ./src/install ../install && cd .. && zip -r xlahvi00_xsvehl09_xsasak01_xkrajc21.zip Calculator doc install
+	cp -r ./src/install ../install && cd .. && zip -r xlahvi00_xsvehl09_xsasak01_xkrajc21.zip Calculator doc install
 endif
 	
 doc: 
