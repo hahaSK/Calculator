@@ -11,7 +11,7 @@ Team: ShatteredButWhole
 * [Qt](http://doc.qt.io/qt-5/linux.html)
 
 ## Getting Started
-Use this commands for top-level Makefile (for Windows see additional informations !):
+Use this commands for top-level Makefile (for Windows see additional informations !):  
 ```make all``` - install the application <br />
 ```make uninstall``` - unistall the application <br />
 ```make clean``` - remove unwanted files. Ready for deployment <br />
