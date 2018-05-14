@@ -23,7 +23,7 @@ Use this commands for top-level Makefile (for Windows see additional information
 ```make test``` - run tests of mathematical library <br />
 ```make pack``` - zip the whole directory  
 ```make run``` - start the Calculator application <br />
-```make doc``` - create doxygen documentation
+```make doc``` - create doxygen documentation <br />
 ```make install_prerequisities``` - install required prerequisities <br />
 
 ### Additional informations
