@@ -35,9 +35,9 @@ Used generators for package:
 
 ## Authors
 * **Juraj Lahvička** 	xlahvi00 - (https://github.com/hahaSK)
-* **Tomáš Sašák** 	xsasak01
-* **Lubomír Švehla** 	xsvehl09
-* **Martin Krajčí** 	xkrajc21
+* **Tomáš Sasák** 	xsasak01 - (https://github.com/yungbender)
+* **Lubomír Švehla** 	xsvehl09 - (https://github.com/iljacek)
+* **Martin Krajči** 	xkrajc21 - (https://github.com/MartinKrajci)
 
 ## License
 
